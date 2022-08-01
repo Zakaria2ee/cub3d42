@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rays_to_image.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:48:59 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/01 11:05:58 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/01 14:46:30 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,29 +30,43 @@ void rays_to_image(t_data *data, double *rays)
     mlx_put_image_to_window(data->mlx, data->mlx_win, img.mlx_img, 0,0);
 }
 
+int get_color(int d, int color, int limit)
+{
+    if (d > limit)
+        d = limit;
+    else if (d < 20)
+        d = 0;
+    color += ((unsigned char)d) << 24;
+    return (color);
+}
+
 void put_pixles(t_img img, int current_x, int current_y, double *rays, t_data *data)
 {
     int i;
+    int color;
 
     i = (RSY - (RSY * 50/rays[current_x]))/2;
     while(i > 0)
     {
-        ft_put_pxl(&img, current_x, current_y, data->Floor);
+        color = get_color(RSY - current_y, data->Floor, 100);
+        ft_put_pxl(&img, current_x, current_y, color);
         current_y--;
         i--;
     }
     i = RSY * 50/rays[current_x];
     if(i > RSY)
         i = RSY - 1;
+    color = get_color(rays[current_x], 0xFFFFFF, 150);
     while(i >= 0 && current_y > 0)
     {
-        ft_put_pxl(&img, current_x, current_y, 0x2F4F4F);
+        ft_put_pxl(&img, current_x, current_y, color);
         i--;
         current_y--;
     }
     while(current_y >= 0)
     {
-        ft_put_pxl(&img, current_x, current_y, data->Sky);
+        color = get_color(current_y, data->Sky, 100);
+        ft_put_pxl(&img, current_x, current_y, color);
         current_y--;
     }
 }

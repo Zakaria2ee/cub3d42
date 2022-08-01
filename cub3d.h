@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 11:39:03 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/01 11:05:02 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/01 14:03:26 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ int     key_hook(int keycode, t_data *data);
 void    rays_to_image(t_data *data, double *rays);
 void    rendering_3d_map(t_data *data);
 void    put_pixles(t_img img, int current_x, int current_y, double *rays, t_data *data);
+void	put_black_background(t_data *data);
 
 void    move_back(t_data *data);
 void    move_stright(t_data *data);
