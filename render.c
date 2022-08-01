@@ -6,7 +6,7 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 09:49:54 by zboudair          #+#    #+#             */
-/*   Updated: 2022/07/30 19:41:28 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/01 09:19:22 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,9 @@ void rendering(t_data *data)
     mlx_hook(data->mlx_win, 17, 1, &ft_close, 0);  
     mlx_hook(data->mlx_win,2 ,0 ,  &key_hook ,data);
     //mlx_hook(data->mlx_win, 6, 0L, mouse_pos, data);   
-    //mlx_loop_hook(data->mlx, set_windows, data);
    
     mlx_loop(data->mlx);
 }
-
-
-
-// int mouse_pos(int x, int y, t_data *data)
-// {
-//     (void)data;
-
-//     printf("(x,y)(%d,%d)\n", x,y);
-//     return (0);
-// }
-
 
 void init(t_data *data)
 {

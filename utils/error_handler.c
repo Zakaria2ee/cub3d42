@@ -6,14 +6,11 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 11:45:09 by zboudair          #+#    #+#             */
-/*   Updated: 2022/07/26 09:43:25 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/01 10:03:22 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
-
-void empty_errors(t_data *data);
-void check_space(int i, int j, char **map);
 
 void error_handler(t_data *data)
 {

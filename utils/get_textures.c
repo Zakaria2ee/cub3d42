@@ -6,7 +6,7 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 09:01:23 by zboudair          #+#    #+#             */
-/*   Updated: 2022/07/26 09:40:32 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/01 11:04:13 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,12 @@ void check_path(char *s, t_data *data)
     else if(!ft_memcmp(s, "F ", 2))
     {
         s += 2;
-        data->Floor = ft_strdup((s += skip_space(s)));
+        data->Floor = hexa_colors(ft_strdup((s += skip_space(s))));
     }
     else if(!ft_memcmp(s, "C ", 2))
     {
         s += 2;
-        data->Sky = ft_strdup((s += skip_space(s)));
+        data->Sky =  hexa_colors(ft_strdup((s += skip_space(s))));
     }
     else
         ft_exit("Error\nWrong texture\n");

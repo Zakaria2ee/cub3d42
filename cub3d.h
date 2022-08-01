@@ -6,7 +6,7 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 11:39:03 by zboudair          #+#    #+#             */
-/*   Updated: 2022/07/31 12:09:12 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/01 11:05:02 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ typedef struct  data_t
     char *North;
     char *West;
     char *East;
-    char *Floor;
-    char *Sky;
+    int Floor;
+    int Sky;
     int fd;
     char *mlx_win;
     char *mlx;
@@ -97,9 +97,13 @@ void    rendering(t_data *data);
 int     set_windows(t_data *data);
 int     key_hook(int keycode, t_data *data);
 void    init(t_data *data);
-
+void    empty_errors(t_data *data);
+void    check_space(int i, int j, char **map);
 void    rays_counter(t_data *data, double *rays);
 void    get_ray(t_data *data, double angle, double *ray, int r);
+int     ft_isnum(char c);
+
+int	    ft_atoi(const char	*str);
 
 int     walls_checker(int x, int y, t_data *data);
 int     walls_checker2(int x, int y, float dy, float dx, t_data *data);
@@ -111,7 +115,7 @@ void    render_2dmap(t_data *data);
 int     key_hook(int keycode, t_data *data);
 void    rays_to_image(t_data *data, double *rays);
 void    rendering_3d_map(t_data *data);
-void    put_pixles(t_img img, int current_x, int current_y, double *rays);
+void    put_pixles(t_img img, int current_x, int current_y, double *rays, t_data *data);
 
 void    move_back(t_data *data);
 void    move_stright(t_data *data);
@@ -130,6 +134,8 @@ char	*ft_substr(char	const *s, unsigned	int start, size_t len);
 char	*ft_strjoin(char *s1, char *s2);
 char	**ft_split(char	const *s, char c);
 
+
+int hexa_colors(char *str);
 
 
 

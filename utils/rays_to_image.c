@@ -6,7 +6,7 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:48:59 by zboudair          #+#    #+#             */
-/*   Updated: 2022/07/31 11:53:09 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/01 11:05:58 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,20 @@ void rays_to_image(t_data *data, double *rays)
     current_x = 0;
     while(current_x < 1200)
     {
-        put_pixles(img, current_x, current_y, rays);
+        put_pixles(img, current_x, current_y, rays, data);
         current_x++;
     }
     mlx_put_image_to_window(data->mlx, data->mlx_win, img.mlx_img, 0,0);
 }
 
-void put_pixles(t_img img, int current_x, int current_y, double *rays)
+void put_pixles(t_img img, int current_x, int current_y, double *rays, t_data *data)
 {
     int i;
 
     i = (RSY - (RSY * 50/rays[current_x]))/2;
     while(i > 0)
     {
-        ft_put_pxl(&img, current_x, current_y, 0xC0C0C0);
+        ft_put_pxl(&img, current_x, current_y, data->Floor);
         current_y--;
         i--;
     }
@@ -52,7 +52,7 @@ void put_pixles(t_img img, int current_x, int current_y, double *rays)
     }
     while(current_y >= 0)
     {
-        ft_put_pxl(&img, current_x, current_y, 0x696969);
+        ft_put_pxl(&img, current_x, current_y, data->Sky);
         current_y--;
     }
 }

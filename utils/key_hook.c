@@ -6,7 +6,7 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 14:28:11 by zboudair          #+#    #+#             */
-/*   Updated: 2022/07/30 19:41:03 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/01 09:19:42 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ int key_hook(int keycode, t_data *data)
         move_left(data);
     else if(keycode == 2)
         move_right(data);
-    //set_windows(data);
-    //rays_counter(data);
     rendering_3d_map(data);
+    //render_2dmap(data);
     return (0);
 }
