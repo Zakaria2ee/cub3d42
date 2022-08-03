@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   walls_checker.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 09:06:20 by zboudair          #+#    #+#             */
-/*   Updated: 2022/07/31 12:10:18 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/02 23:49:02 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,13 @@ int walls_checker2(int x, int y, float dy, float dx, t_data *data)
     return (1);
 }
 
-int walls_checker3(int x, int y, float dy, float dx, t_data *data)
+int walls_checker3(double x, double y, float dy, float dx, t_data *data)
 {
-    if(data->map[(int)(y + dy)/50][(int)(x + dx)/50] == '1')
-         return (0);
-    if(data->map[(int)(y + dy) / 50][(int)(x / 50)] == '1' 
-    && data->map[(int)(y / 50)][(int)(x + dx) / 50] == '1')
-        return (0);
-    return (1);
+    // if (data->map[(int)(y + dy)/50][(int)(x + dx)/50] == '1')
+    //      return ('y');
+    if (data->map[(int)(y + dy) / 50][(int)(x / 50)] == '1')
+        return ('y');
+    if (data->map[(int)(y / 50)][(int)(x + dx) / 50] == '1')
+        return ('x');
+    return (0);
 }
