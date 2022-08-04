@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 11:39:03 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/02 23:49:23 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/03 19:29:27 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 #define RA 10
 #define RSX 1200
 #define RSY 800
+#define TEXY 200
+#define TEXX 200
 
 typedef struct s_img
 {
@@ -68,6 +70,7 @@ typedef struct  data_t
     int color;
     t_img img;
     t_img black;
+    int dirRay[RSX][2];
 } t_data;
 
 
@@ -104,8 +107,8 @@ int     key_hook(int keycode, t_data *data);
 void    init(t_data *data);
 void    empty_errors(t_data *data);
 void    check_space(int i, int j, char **map);
-void    rays_counter(t_data *data, double *rays, int *dirRay);
-int     get_ray(t_data *data, double angle, double *ray, int r);
+void    rays_counter(t_data *data, double *rays);
+double get_ray(t_data *data, double angle, int i, int r);
 int     ft_isnum(char c);
 
 int	    ft_atoi(const char	*str);
@@ -118,9 +121,9 @@ void    get_player_a(t_data *data);
 void    ft_put_pxl(t_img *img, int x, int y, int color);
 void    render_2dmap(t_data *data);
 int     key_hook(int keycode, t_data *data);
-void    rays_to_image(t_data *data, double *rays, int *dirRay);
+void rays_to_image(t_data *data, double *rays);
 void    rendering_3d_map(t_data *data);
-void put_pixles(t_img img, int current_x, double *rays, int *dirRay, t_data *data);
+void put_pixles(t_img img, int current_x, double *rays,  t_data *data);
 void	put_black_background(t_data *data);
 void    put_black_pixel(t_data *data);
 

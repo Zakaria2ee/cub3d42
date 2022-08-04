@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 19:23:52 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/02 23:35:44 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/03 13:06:59 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 void rendering_3d_map(t_data *data)
 {
     double rays[RSX];
-    int    dirRay[RSX];
 
-    rays_counter(data, rays, dirRay);
+    rays_counter(data, rays);
     put_black_background(data);
-    rays_to_image(data, rays, dirRay);
+    rays_to_image(data, rays);
 }

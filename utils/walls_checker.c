@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 09:06:20 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/02 23:49:02 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/03 10:58:40 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ int walls_checker2(int x, int y, float dy, float dx, t_data *data)
 
 int walls_checker3(double x, double y, float dy, float dx, t_data *data)
 {
-    // if (data->map[(int)(y + dy)/50][(int)(x + dx)/50] == '1')
-    //      return ('y');
     if (data->map[(int)(y + dy) / 50][(int)(x / 50)] == '1')
         return ('y');
     if (data->map[(int)(y / 50)][(int)(x + dx) / 50] == '1')

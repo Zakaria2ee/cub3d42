@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 09:49:54 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/03 09:49:24 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/03 18:53:45 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ void rendering(t_data *data)
 
 void init(t_data *data)
 {
-    data->e.mlx_img = mlx_xpm_file_to_image(data->mlx, "img/ael-bekk.xpm", &data->h, &data->w);
+    data->e.mlx_img = mlx_xpm_file_to_image(data->mlx, "img/ael-bekk.xpm", &data->w, &data->h);
     data->e.addr = mlx_get_data_addr(data->e.mlx_img, &data->e.bpp, &data->e.line_len, &data->e.endian);
-    data->we.mlx_img = mlx_xpm_file_to_image(data->mlx, "img/wall.xpm", &data->h, &data->w);
+    data->we.mlx_img = mlx_xpm_file_to_image(data->mlx, "img/zboudair.xpm", &data->w, &data->h);
     data->we.addr = mlx_get_data_addr(data->we.mlx_img, &data->we.bpp, &data->we.line_len, &data->we.endian);
-    data->s.mlx_img = mlx_xpm_file_to_image(data->mlx, "img/mabenchi.xpm", &data->h, &data->w);
+    data->s.mlx_img = mlx_xpm_file_to_image(data->mlx, "img/mabenchi.xpm", &data->w, &data->h);
     data->s.addr = mlx_get_data_addr(data->s.mlx_img, &data->s.bpp, &data->s.line_len, &data->s.endian);
-    data->n.mlx_img = mlx_xpm_file_to_image(data->mlx, "img/zboudair.xpm", &data->h, &data->w);
+    data->n.mlx_img = mlx_xpm_file_to_image(data->mlx, "img/mel-hada.xpm", &data->w, &data->h);
     data->n.addr = mlx_get_data_addr(data->n.mlx_img, &data->n.bpp, &data->n.line_len, &data->n.endian);
     data->black.mlx_img = mlx_new_image(data->mlx, RSX, RSY);
     data->black.addr = mlx_get_data_addr(data->black.mlx_img, &data->black.bpp, &data->black.line_len, &data->black.endian);
