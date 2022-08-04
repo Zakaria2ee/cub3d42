@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   put_black_img.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 13:58:16 by mabenchi          #+#    #+#             */
-/*   Updated: 2022/08/02 10:36:56 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/04 12:34:03 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 void	put_black_background(t_data *data)
 {

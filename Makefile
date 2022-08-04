@@ -1,19 +1,25 @@
 # _*_ MakeFile _*_
 
 NAME = cub3d
+BONUSNAME= cub3d_bonus
 
 CC = cc
 
+
+
 FLGS = -Wextra -Wall -Werror -O3
 
-FUNC = parse.c render.c
-
-UTLS =  utils/ft_exit.c utils/ft_check_extention.c utils/get_next_line.c \
+FUNCTION = utils/ft_exit.c utils/ft_check_extention.c utils/get_next_line.c \
 		utils/get_textures.c utils/get_map.c utils/error_handler.c utils/ft_close.c \
-		utils/set_windows.c utils/move_stright.c utils/look_left.c utils/look_right.c \
+		 utils/move_stright.c utils/look_left.c utils/look_right.c \
 		utils/move_back.c utils/walls_checker.c utils/rays_counter.c utils/move_left.c \
-		utils/move_right.c utils/2d_map_render.c utils/key_hook.c utils/rays_to_image.c \
-		utils/rendering_3D_map.c utils/ft_isnum.c utils/put_black_img.c
+		utils/move_right.c   utils/rays_to_image.c \
+		 utils/ft_isnum.c utils/put_black_img.c utils/parse.c \
+
+UTLS = utils/render.c  utils/rendering_3D_map.c utils/key_hook.c
+		
+
+UTLS_BONUS = utils/rendering_3dbonus_map.c utils/render_bonus.c utils/bonus_key_hook.c utils/2d_map_render.c
  
 LIBFT = libft/ft_strjoin.c libft/ft_strlen.c libft/ft_strcmp.c \
 		libft/ft_split.c libft/ft_memcmp.c libft/ft_putstr_fd.c \
@@ -24,9 +30,11 @@ SRCS =
 
 all: $(NAME)
 
-$(NAME):    $(SRCS)
-	@$(CC) $(FLGS) -I /usr/local/include main.c -L /usr/local/lib -lmlx -framework OpenGL -framework AppKit $(FUNC) $(UTLS) $(LIBFT) -fsanitize=address -o $(NAME)
+$(NAME):   $(SRCS)
+	@$(CC) $(FLGS) -I /usr/local/include cub3d.c -L /usr/local/lib -lmlx -framework OpenGL -framework AppKit $(UTLS) $(FUNCTION) $(LIBFT) -fsanitize=address -o $(NAME)
 
+bonus :
+	@$(CC) $(FLGS) -I /usr/local/include cub3d_bonus.c -L /usr/local/lib -lmlx -framework OpenGL -framework AppKit $(UTLS_BONUS) $(FUNCTION) $(LIBFT) -fsanitize=address -o $(BONUSNAME)
 clean : 
 	rm $(NAME)
 	

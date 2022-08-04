@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   rendering_3dbonus_map.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/07 18:22:42 by zboudair          #+#    #+#             */
-/*   Updated: 2021/11/18 10:16:32 by zboudair         ###   ########.fr       */
+/*   Created: 2022/08/04 12:55:25 by zboudair          #+#    #+#             */
+/*   Updated: 2022/08/04 12:59:01 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "../includes/cub3d.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void rendering_3dbonus_map(t_data *data)
 {
-	size_t			i;
-	unsigned char	*arr;
+    double rays[RSX];
 
-	arr = malloc(size * count);
-	if (arr == NULL)
-	{
-		return (NULL);
-	}
-	i = 0;
-	while (i < size * count)
-	{
-		arr[i] = 0;
-		i++;
-	}
-	return (arr);
+    rays_counter(data, rays);
+    put_black_background(data);
+    rays_to_image(data, rays);
 }

@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strrchr.c                                          :+:      :+:    :+:   */
+/*   cub3d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 10:26:20 by zboudair          #+#    #+#             */
-/*   Updated: 2021/11/20 15:20:45 by zboudair         ###   ########.fr       */
+/*   Created: 2022/07/19 11:38:50 by zboudair          #+#    #+#             */
+/*   Updated: 2022/08/04 12:38:22 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const	char	*str, int c)
-{
-	int	i;
+#include "includes/cub3d.h"
 
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	if ((char )c == 0)
-	{
-		return ((char *)str + i);
-	}
-	while (--i >= 0)
-	{
-		if (str[i] == (char )c)
-		{
-			return ((char *)str + i);
-		}
-	}
-	return (0);
+int main(int ac, char **argv)
+{
+    if(ac != 2)
+        return (0);
+    t_data data;
+    parsing(argv, &data);
+    rendering(&data);
 }

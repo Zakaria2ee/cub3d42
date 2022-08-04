@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   walls_checker.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 09:06:20 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/03 10:58:40 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/04 12:34:39 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 int walls_checker(int x, int y, t_data *data)
 {

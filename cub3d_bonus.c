@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   cub3d_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 15:54:54 by zboudair          #+#    #+#             */
-/*   Updated: 2021/11/18 10:22:27 by zboudair         ###   ########.fr       */
+/*   Created: 2022/08/04 12:49:22 by zboudair          #+#    #+#             */
+/*   Updated: 2022/08/04 13:39:26 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void ( *f )(unsigned	int, char*))
-{
-	unsigned int	i;
+#include "includes/cub3d.h"
 
-	i = 0;
-	if (s)
-	{
-		while (s[i])
-		{
-			f(i, &s[i]);
-			i++;
-		}
-	}
+int main(int ac, char **argv)
+{
+    if(ac != 2)
+        return (0);
+    t_data data;
+    parsing(argv, &data);
+    rendering_bonus(&data);
 }

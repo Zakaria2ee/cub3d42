@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_textures.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 09:01:23 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/01 13:08:53 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/04 12:33:34 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 void get_textures(char **argv, t_data *data)
 {

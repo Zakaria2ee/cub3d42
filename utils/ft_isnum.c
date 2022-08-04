@@ -6,11 +6,11 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 10:08:59 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/01 10:42:24 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/04 12:33:12 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 int ft_isnum(char c)
 {

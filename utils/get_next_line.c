@@ -6,11 +6,11 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 09:08:53 by zboudair          #+#    #+#             */
-/*   Updated: 2022/07/21 09:26:43 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/04 12:33:29 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 char *get_next_line(int fd)
 {

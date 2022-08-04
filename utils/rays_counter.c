@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rays_counter.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:44:12 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/03 19:29:54 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/04 12:34:08 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 void rays_counter(t_data *data, double *rays)
 {

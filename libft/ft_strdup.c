@@ -6,11 +6,11 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 13:32:57 by zboudair          #+#    #+#             */
-/*   Updated: 2022/07/21 10:37:36 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/04 12:37:57 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 char	*ft_strdup(char *str)
 {

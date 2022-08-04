@@ -6,11 +6,11 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 12:46:56 by zboudair          #+#    #+#             */
-/*   Updated: 2022/07/21 12:21:15 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/04 12:33:03 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 void	check_extention(char *path)
 {

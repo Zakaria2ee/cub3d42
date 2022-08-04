@@ -6,11 +6,11 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 12:06:09 by zboudair          #+#    #+#             */
-/*   Updated: 2022/07/21 09:55:28 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/04 12:37:13 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

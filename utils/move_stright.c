@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   move_stright.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 16:01:42 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/02 16:16:16 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/04 12:33:57 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 void move_stright(t_data *data)
 {

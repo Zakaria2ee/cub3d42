@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   move_right.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:58:15 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/02 16:16:12 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/04 12:33:53 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 void move_right(t_data *data)
 {

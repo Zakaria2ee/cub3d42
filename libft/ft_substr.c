@@ -6,11 +6,11 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 15:19:01 by zboudair          #+#    #+#             */
-/*   Updated: 2022/07/20 12:49:51 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/04 12:38:00 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 char	*ft_substr(char	const *s, unsigned	int start, size_t len)
 {

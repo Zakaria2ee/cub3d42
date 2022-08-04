@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rays_to_image.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:48:59 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/04 10:22:17 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/04 12:34:11 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 void rays_to_image(t_data *data, double *rays)
 {

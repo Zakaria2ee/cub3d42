@@ -6,12 +6,12 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 11:31:43 by zboudair          #+#    #+#             */
-/*   Updated: 2022/07/20 12:50:23 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/04 12:37:45 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "../cub3d.h"
+
+#include "../includes/cub3d.h"
 
 static	int	wordsize(char	const *s, char c)
 {

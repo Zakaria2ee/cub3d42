@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   move_back.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 17:03:19 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/01 13:09:30 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/04 12:33:47 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 void move_back(t_data *data)
 {

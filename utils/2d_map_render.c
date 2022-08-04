@@ -6,11 +6,11 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 11:50:44 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/01 09:12:02 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/04 12:32:56 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 void render_2dmap(t_data *data)
 {

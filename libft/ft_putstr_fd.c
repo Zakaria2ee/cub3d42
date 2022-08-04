@@ -6,11 +6,11 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 19:29:22 by zboudair          #+#    #+#             */
-/*   Updated: 2022/07/21 10:16:10 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/04 12:39:17 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
