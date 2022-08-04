@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 09:49:54 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/04 13:45:36 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/04 21:45:28 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void rendering_bonus(t_data *data)
     data->mlx_win = mlx_new_window(data->mlx, RSX,  RSY, "Cub3d"); 
     init(data);
     rendering_3dbonus_map(data);
+    render_2dmap(data);
     mlx_hook(data->mlx_win, 17, 1, &ft_close, 0);  
     mlx_hook(data->mlx_win,2 ,0 ,  &bonus_key_hook ,data);
     //mlx_hook(data->mlx_win, 6, 0L, mouse_pos, data);   
@@ -26,6 +27,10 @@ void rendering_bonus(t_data *data)
 
 void init(t_data *data)
 {
+    data->img1.mlx_img = mlx_new_image(data->mlx, 200, 200);
+    data->img1.addr = mlx_get_data_addr(data->img1.mlx_img, &data->img1.bpp, &data->img1.line_len, &data->img1.endian);
+    data->mini_wall.mlx_img = mlx_xpm_file_to_image(data->mlx, "img/wallwall.xpm", &data->w, &data->h);
+    data->mini_wall.addr = mlx_get_data_addr(data->mini_wall.mlx_img, &data->mini_wall.bpp, &data->mini_wall.line_len, &data->mini_wall.endian);
     data->e.mlx_img = mlx_xpm_file_to_image(data->mlx, "img/ael-bekk.xpm", &data->w, &data->h);
     data->e.addr = mlx_get_data_addr(data->e.mlx_img, &data->e.bpp, &data->e.line_len, &data->e.endian);
     data->we.mlx_img = mlx_xpm_file_to_image(data->mlx, "img/zboudair.xpm", &data->w, &data->h);

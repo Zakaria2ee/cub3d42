@@ -19,7 +19,7 @@ FUNCTION = utils/ft_exit.c utils/ft_check_extention.c utils/get_next_line.c \
 UTLS = utils/render.c  utils/rendering_3D_map.c utils/key_hook.c
 		
 
-UTLS_BONUS = utils/rendering_3dbonus_map.c utils/render_bonus.c utils/bonus_key_hook.c utils/2d_map_render.c
+UTLS_BONUS = utils_bonus/rendering_3dbonus_map.c utils_bonus/render_bonus.c utils_bonus/bonus_key_hook.c utils_bonus/2d_map_render.c
  
 LIBFT = libft/ft_strjoin.c libft/ft_strlen.c libft/ft_strcmp.c \
 		libft/ft_split.c libft/ft_memcmp.c libft/ft_putstr_fd.c \
@@ -30,13 +30,13 @@ SRCS =
 
 all: $(NAME)
 
-$(NAME):   $(SRCS)
+$(NAME):   $(UTLS) $(FUNCTION) $(LIBFT)
 	@$(CC) $(FLGS) -I /usr/local/include cub3d.c -L /usr/local/lib -lmlx -framework OpenGL -framework AppKit $(UTLS) $(FUNCTION) $(LIBFT) -fsanitize=address -o $(NAME)
 
 bonus :
 	@$(CC) $(FLGS) -I /usr/local/include cub3d_bonus.c -L /usr/local/lib -lmlx -framework OpenGL -framework AppKit $(UTLS_BONUS) $(FUNCTION) $(LIBFT) -fsanitize=address -o $(BONUSNAME)
 clean : 
-	rm $(NAME)
+	@rm -rf $(NAME) $(BONUSNAME)
 	
 fclean : clean
 

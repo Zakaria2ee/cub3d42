@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_purchar_fd.c                                    :+:      :+:    :+:   */
+/*   rendering_3dbonus_map.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 19:05:06 by zboudair          #+#    #+#             */
-/*   Updated: 2021/11/20 15:16:48 by zboudair         ###   ########.fr       */
+/*   Created: 2022/08/04 12:55:25 by zboudair          #+#    #+#             */
+/*   Updated: 2022/08/04 21:45:01 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "../includes/cub3d.h"
 
-void	ft_putchar_fd(char c, int fd)
+void rendering_3dbonus_map(t_data *data)
 {
-	write(fd, &c, 1);
+    double rays[RSX];
+
+    rays_counter(data, rays);
+    put_black_background(data);
+    rays_to_image(data, rays);
 }

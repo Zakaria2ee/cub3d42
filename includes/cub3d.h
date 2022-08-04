@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 11:39:03 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/04 13:35:55 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/04 20:34:53 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 #define RSY 800
 #define TEXY 200
 #define TEXX 200
+#define MINIX 200
+#define MINIY 200
 
 typedef struct s_img
 {
@@ -34,6 +36,8 @@ typedef struct s_img
 	int		bpp; /* bits per pixel */
 	int		line_len;
 	int		endian;
+    int     w;
+    int     h;
 }	t_img;
 
 typedef struct  data_t
@@ -55,8 +59,8 @@ typedef struct  data_t
     char *mlx;
     int line;
     int column;
-    void *img1;
-    void *img2;
+    t_img img1;
+    t_img img2;
     void *player;
     int player_x;
     int player_y;
@@ -70,6 +74,7 @@ typedef struct  data_t
     int color;
     t_img img;
     t_img black;
+    t_img mini_wall;
     int dirRay[RSX][2];
 } t_data;
 
