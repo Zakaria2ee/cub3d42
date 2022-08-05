@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 11:50:44 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/04 22:30:53 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/05 10:43:09 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ void render_2dmap(t_data *data)
     if (j <= 0)
         j = data->player_x;
     f_j = j;
-    while (data->map[(int)(j / 50)] && (i - f_i - 1) < 200)
+    while ((j - f_j - 1) < 200 && (j - f_j - 1) < RSY && data->map[(int)(j / 50)])
     {
-        j = f_j;
-        while (data->map[(int)(j / 50)][(int)(i / 50)] && (j - f_j - 1) < 200)
+        i = f_i;
+        while ((i - f_i - 1) < 200 && (i - f_i - 1) < RSX && data->map[(int)(j / 50)][(int)(i / 50)])
         {
             if (data->map[(int)(j / 50)][(int)(i / 50)] == '0')
                 ft_put_pxl(&(data->img1), (i - f_i) % 200, (j - f_j) % 200, 0xFFFFFF);
@@ -61,10 +61,10 @@ void render_2dmap(t_data *data)
                 ft_put_pxl(&(data->img1), (i - f_i) % 200, (j - f_j) % 200, 0x000000);
             else
                 ft_put_pxl(&(data->img1), (i - f_i) % 200, (j - f_j) % 200, 0xFF00FF);
-            j++;
+            i++;
         }
-        i++;
+        j++;
     }
-    drawcircle(data, 100, 100, 30, 0x000000);
+    drawcircle(data, 85, 85, 30, 0x000000);
     mlx_put_image_to_window(data->mlx, data->mlx_win, data->img1.mlx_img, 0,0);
 }
