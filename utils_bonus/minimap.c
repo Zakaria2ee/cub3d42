@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 11:50:44 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/05 10:43:09 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/05 13:37:22 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void    drawcircle(t_data *data, float x, float y, int w, int color)
     }
 }
 
-void render_2dmap(t_data *data)
+void mini_map(t_data *data)
 {
     int i;
     int j;
@@ -43,12 +43,8 @@ void render_2dmap(t_data *data)
 
     angle = data->player_a - 30;
     i = data->player_x - 100;
-    if (i <= 0)
-        i = data->player_x;
     f_i = i;
     j = data->player_y - 100;
-    if (j <= 0)
-        j = data->player_x;
     f_j = j;
     while ((j - f_j - 1) < 200 && (j - f_j - 1) < RSY && data->map[(int)(j / 50)])
     {

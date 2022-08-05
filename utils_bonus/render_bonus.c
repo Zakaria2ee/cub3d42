@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 09:49:54 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/04 21:45:28 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/05 13:42:58 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void rendering_bonus(t_data *data)
     data->mlx_win = mlx_new_window(data->mlx, RSX,  RSY, "Cub3d"); 
     init(data);
     rendering_3dbonus_map(data);
-    render_2dmap(data);
+    mini_map(data);
     mlx_hook(data->mlx_win, 17, 1, &ft_close, 0);  
     mlx_hook(data->mlx_win,2 ,0 ,  &bonus_key_hook ,data);
     //mlx_hook(data->mlx_win, 6, 0L, mouse_pos, data);   
