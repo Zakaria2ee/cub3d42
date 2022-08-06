@@ -6,7 +6,7 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 09:06:20 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/04 12:34:39 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/06 12:13:10 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ int walls_checker3(double x, double y, float dy, float dx, t_data *data)
         return ('y');
     if (data->map[(int)(y / 50)][(int)(x + dx) / 50] == '1')
         return ('x');
+    if(data->map[(int)(y + dy) / 50][(int)(x + dx) / 50] == '1')
+        return (1);
     return (0);
 }
