@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_key_hook.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 12:56:38 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/06 11:46:06 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/06 16:12:49 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ int bonus_key_hook(int keycode, t_data *data)
     else if(keycode == 2)
         move_right(data);
     rendering_3dbonus_map(data);
-    //mini_map(data);
+    mini_map(data);
     return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 11:39:03 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/05 13:37:52 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/06 16:09:32 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,8 +155,7 @@ int hexa_colors(char *str);
 void    rendering_3dbonus_map(t_data *data);
 int     bonus_key_hook(int keycode, t_data *data);
 void    rendering_bonus(t_data *data);
-void mini_map(t_data *data);
-
-
-
+void    mini_map(t_data *data);
+int     parsing_b(char **argv, t_data *data);
+void	check_doors(t_data *data);
 #endif
