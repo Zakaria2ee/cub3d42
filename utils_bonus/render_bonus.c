@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 09:49:54 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/06 15:09:47 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/07 14:57:50 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ void rendering_bonus(t_data *data)
 
 void init(t_data *data)
 {
-    data->img1.mlx_img = mlx_new_image(data->mlx, 200, 200);
-    data->img1.addr = mlx_get_data_addr(data->img1.mlx_img, &data->img1.bpp, &data->img1.line_len, &data->img1.endian);
-    data->mini_wall.mlx_img = mlx_xpm_file_to_image(data->mlx, "img/wallwall.xpm", &data->w, &data->h);
-    data->mini_wall.addr = mlx_get_data_addr(data->mini_wall.mlx_img, &data->mini_wall.bpp, &data->mini_wall.line_len, &data->mini_wall.endian);
+    data->minimap.mlx_img = mlx_new_image(data->mlx, 200, 200);
+    data->minimap.addr = mlx_get_data_addr(data->minimap.mlx_img, &data->minimap.bpp, &data->minimap.line_len, &data->minimap.endian);
+    data->door.mlx_img = mlx_xpm_file_to_image(data->mlx, "img/door.xpm", &data->door.w, &data->door.h);
+    data->door.addr = mlx_get_data_addr(data->door.mlx_img, &data->door.bpp, &data->door.line_len, &data->door.endian);
     data->e.mlx_img = mlx_xpm_file_to_image(data->mlx, "img/ael-bekk.xpm", &data->w, &data->h);
     data->e.addr = mlx_get_data_addr(data->e.mlx_img, &data->e.bpp, &data->e.line_len, &data->e.endian);
     data->we.mlx_img = mlx_xpm_file_to_image(data->mlx, "img/zboudair.xpm", &data->w, &data->h);

@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 11:39:03 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/06 16:09:32 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/07 21:46:38 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,15 @@ typedef struct s_img
     int     h;
 }	t_img;
 
+typedef struct s_point
+{
+    int x;
+    int y;
+} t_cord;
+
 typedef struct  data_t
 {
+    int is_door;
     char **map;
     char *saved;
     char *South;
@@ -59,7 +66,7 @@ typedef struct  data_t
     char *mlx;
     int line;
     int column;
-    t_img img1;
+    t_img minimap;
     t_img img2;
     void *player;
     int player_x;
@@ -74,8 +81,8 @@ typedef struct  data_t
     int color;
     t_img img;
     t_img black;
-    t_img mini_wall;
-    int dirRay[RSX][2];
+    t_img door;
+    int dirRay[RSX][3];
 } t_data;
 
 
@@ -112,7 +119,6 @@ void    init(t_data *data);
 void    empty_errors(t_data *data);
 void    check_space(int i, int j, char **map);
 void    rays_counter(t_data *data, double *rays);
-double get_ray(t_data *data, double angle, int i, int r);
 int     ft_isnum(char c);
 
 
@@ -126,7 +132,6 @@ void    ft_put_pxl(t_img *img, int x, int y, int color);
 int     key_hook(int keycode, t_data *data);
 void    rays_to_image(t_data *data, double *rays);
 void    rendering_3d_map(t_data *data);
-void    put_pixles(t_img img, int current_x, double *rays,  t_data *data);
 void	put_black_background(t_data *data);
 void    put_black_pixel(t_data *data);
 
@@ -158,4 +163,11 @@ void    rendering_bonus(t_data *data);
 void    mini_map(t_data *data);
 int     parsing_b(char **argv, t_data *data);
 void	check_doors(t_data *data);
+void    rays_counter_b(t_data *data, double *rays);
+void    rays_to_image_b(t_data *data, double *rays);
+int     walls_checker3_b(double x, double y, float dy, float dx, t_data *data);
+void	open_door(t_data *data);
+void    move_stright_b(t_data *data);
+void move_back_b(t_data *data);
+int     walls_checker2_b(int x, int y, float dy, float dx, t_data *data);
 #endif

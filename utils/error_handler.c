@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_handler.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 11:45:09 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/04 12:33:00 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/07 15:37:53 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ void empty_errors(t_data *data)
         {
             if(data->map[i][j] == '0')
                 check_space(i,j,data->map);
-            if(data->map[i][j] != '1' && data->map[i][j] != '0' && delimiters(data->map[i][j]))
+            if(data->map[i][j] != 'D' && data->map[i][j] != '1' && data->map[i][j] != '0' && delimiters(data->map[i][j]))
                  counter++;
-            if(delimiters(data->map[i][j]) && data->map[i][j] != '1' &&  data->map[i][j] != '0')
+            if(delimiters(data->map[i][j]) && data->map[i][j] != '1' &&  data->map[i][j] != '0' && data->map[i][j] != 'D')
             {
                 data->player_y =  (i * 50) + 25;
                 data->player_x = (j * 50) + 25;
@@ -83,7 +83,7 @@ void check_space(int i, int j, char **map)
 
 int delimiters(char c)
 {
-    if(c == '1' || c == 'N' || c == 'S' || c == 'E' || c == 'W' || c == '0')
+    if(c == '1' || c == 'N' || c == 'S' || c == 'E' || c == 'W' || c == '0' || c == 'D')
         return (1);
     else
         return (0);
