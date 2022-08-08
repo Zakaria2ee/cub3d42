@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:48:59 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/08 15:41:21 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/08 17:43:23 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,15 +60,23 @@ double distance(int x, int y, int x1, int y1)
 void put_pixles_b(t_img img, int current_x, double *rays,  t_data *data)
 {
     int i;
+    int v;
     int color;
     int current_y;
     int to_draw;
 
+    v = 0;
     current_y = RSY - 1;
     i = (RSY - (RSY * 50/rays[current_x]))/2;
+    to_draw = i;
     while(i > 0)
     {
-        ft_put_pxl(&img, current_x, current_y, data->Floor);
+        if (((distance(current_x, current_y, RSX / 2, RSY) - current_y - 100) / 8 ) > 0)
+            v = 1;
+        if (!v)
+            ft_put_pxl(&img, current_x, current_y, data->Floor + ((unsigned char)((distance(current_x, current_y, RSX / 2, RSY) - current_y -200) / 8 ) << 24));
+        else
+            ft_put_pxl(&img, current_x, current_y, 0x000000);
         current_y--;
         i--;
     }

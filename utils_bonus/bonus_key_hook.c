@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_key_hook.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 12:56:38 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/08 16:37:54 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/08 17:54:13 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 int render_map(t_data *data)
 {
-    usleep(300*200);
+    usleep(150*200);
     if(data->keys[0] == 1)
         ft_exit("Exit\n");
     if (data->keys[1] == 1)
-        move_stright(data);
+        move_stright_b(data);
     if(data->keys[2] == 1)
         look_left(data);
     if(data->keys[3] == 1)
         look_right(data);
     if(data->keys[4] == 1)
-        move_back(data);
+        move_back_b(data);
     if(data->keys[5] == 1)
         move_left(data);
     if(data->keys[6] == 1)
