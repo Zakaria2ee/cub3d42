@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:48:59 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/07 15:02:57 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/08 15:41:21 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ static int get_color_b(t_data *data, int *dirRay, int y, int d)
 {
     int pixel;
 
-    if (d > 200)
-        d = 200;
+    if (d > 180)
+        d = 180;
     if (dirRay[2] == 'D')
         pixel = (*(int *)(data->door.addr + (y * data->door.line_len + dirRay[1] * (data->door.bpp / 8)))); 
     else if (dirRay[0] == 's')
@@ -49,6 +49,12 @@ static int get_color_b(t_data *data, int *dirRay, int y, int d)
     else
         pixel = (*(int *)(data->e.addr + (y * data->e.line_len + dirRay[1] * (data->e.bpp / 8))));
     return (pixel + ((unsigned char)d << 24));
+}
+
+double distance(int x, int y, int x1, int y1)
+{
+    return (sqrt(((x - x1) *  (x - x1))
+        + ((y - y1) * (y - y1))));
 }
 
 void put_pixles_b(t_img img, int current_x, double *rays,  t_data *data)
@@ -79,7 +85,11 @@ void put_pixles_b(t_img img, int current_x, double *rays,  t_data *data)
     }
     while(current_y >= 0)
     {
-        ft_put_pxl(&img, current_x, current_y, data->Sky);
+        if (current_y > 255)
+            color = 255;
+        else
+            color = current_y ;
+        ft_put_pxl(&img, current_x, current_y, data->Sky + ((unsigned char)color << 24));
         current_y--;
     }
 }
