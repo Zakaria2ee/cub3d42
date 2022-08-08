@@ -33,10 +33,10 @@ SRCS =
 all: $(NAME)
 
 $(NAME):   $(UTLS) $(FUNCTION) $(LIBFT)
-	@$(CC) $(FLGS) -I /usr/local/include cub3d.c -L /usr/local/lib -lmlx -framework OpenGL -framework AppKit $(UTLS) $(FUNCTION) $(LIBFT) -fsanitize=address -o $(NAME)
+	@$(CC) $(FLGS) -I /usr/local/include cub3d.c -L /usr/local/lib -pthread -lmlx -framework OpenGL -framework AppKit $(UTLS) $(FUNCTION) $(LIBFT) -fsanitize=address -o $(NAME)
 
 bonus :
-	@$(CC) $(FLGS) -I /usr/local/include cub3d_bonus.c -L /usr/local/lib -lmlx -framework OpenGL -framework AppKit $(UTLS_BONUS) $(FUNCTION) $(LIBFT) -fsanitize=address -o $(BONUSNAME)
+	@$(CC) $(FLGS) -I /usr/local/include cub3d_bonus.c -L /usr/local/lib -pthread -lmlx -framework OpenGL -framework AppKit $(UTLS_BONUS) $(FUNCTION) $(LIBFT) -fsanitize=address -o $(BONUSNAME)
 clean : 
 	@rm -rf $(NAME) $(BONUSNAME)
 	

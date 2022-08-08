@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 14:25:03 by mabenchi          #+#    #+#             */
-/*   Updated: 2022/08/07 15:36:29 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/08 14:19:48 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,18 +53,23 @@ void	check_doors(t_data *data)
 void	open_door(t_data *data)
 {
 	if (data->map[(int)(data->player_y / 50) - 1][(int)(data->player_x / 50)] == 'D'
-		&& data->player_a > 240 && data->player_a < 290)
+		&& data->player_a > 180 && data->player_a < 360)
+	{
 		data->map[(int)(data->player_y / 50) - 1][(int)(data->player_x / 50)] = '0';
-
+	}
 	else if (data->map[(int)(data->player_y / 50) + 1][(int)(data->player_x / 50)] == 'D'
-		&& data->player_a > 70 && data->player_a < 110)
+		&& data->player_a > 0 && data->player_a < 180)
+	{
 		data->map[(int)(data->player_y / 50) + 1][(int)(data->player_x / 50)] = '0';
-
+	}
 	else if (data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) - 1] == 'D'
-		&& (data->player_a > 150 && data->player_a < 210))
+		&& (data->player_a > 90 && data->player_a < 270))
+	{
 		data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) - 1] = '0';
-
+	}
 	else if (data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) + 1] == 'D'
-		&& (data->player_a > 330 || data->player_a < 30))
+		&& (data->player_a > 270 || data->player_a < 90))
+	{
 		data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) + 1] = '0';
+	}
 }

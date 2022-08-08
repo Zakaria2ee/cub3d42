@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 11:39:03 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/07 21:46:38 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/07 22:13:07 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <unistd.h>
 # include <stdio.h>
 #include <math.h>
+#include <pthread.h>
 #define PI 3.14159265358979323846
 #define PX 10
 #define RA 10
