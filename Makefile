@@ -21,7 +21,7 @@ UTLS = utils/render.c  utils/rendering_3D_map.c utils/key_hook.c
 
 UTLS_BONUS = utils_bonus/rendering_3dbonus_map.c utils_bonus/render_bonus.c utils_bonus/bonus_key_hook.c utils_bonus/minimap.c \
 			utils_bonus/rays_to_image_b.c utils_bonus/walls_checker.c utils_bonus/rays_counter_b.c utils_bonus/door.c \
-			utils_bonus/move_stright_back.c
+			utils_bonus/move_stright_back.c utils_bonus/key_press.c utils_bonus/key_release.c
  
 LIBFT = libft/ft_strjoin.c libft/ft_strlen.c libft/ft_strcmp.c \
 		libft/ft_split.c libft/ft_memcmp.c libft/ft_putstr_fd.c \

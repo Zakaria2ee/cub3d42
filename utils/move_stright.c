@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_stright.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 16:01:42 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/06 16:05:39 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/08 16:35:43 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,6 @@ void move_stright(t_data *data)
         data->player_x += round(PX * cos(data->player_a * PI/180));
         data->player_y += round(PX * sin(data->player_a * PI/180));
     }
+    rendering_3dbonus_map(data);
+    mini_map(data);
 }

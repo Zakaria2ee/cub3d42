@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   door.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 14:25:03 by mabenchi          #+#    #+#             */
-/*   Updated: 2022/08/08 14:19:48 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/08 16:32:49 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,6 @@ void	open_door(t_data *data)
 	{
 		data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) + 1] = '0';
 	}
+	move_stright_b(data);
+    rendering_3dbonus_map(data);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 11:39:03 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/07 22:13:07 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/08 16:15:57 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ typedef struct  data_t
     t_img black;
     t_img door;
     int dirRay[RSX][3];
+    int keys[8];
 } t_data;
 
 
@@ -171,4 +172,7 @@ void	open_door(t_data *data);
 void    move_stright_b(t_data *data);
 void move_back_b(t_data *data);
 int     walls_checker2_b(int x, int y, float dy, float dx, t_data *data);
+int add_key_release(int keycode, t_data *data);
+int add_key_press(int keycode, t_data *data);
+int render_map(t_data *data);
 #endif

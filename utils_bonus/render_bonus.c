@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 09:49:54 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/08 14:07:53 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/08 16:15:07 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,18 @@ void rendering_bonus(t_data *data)
     init(data);
     rendering_3dbonus_map(data);
     mini_map(data);
-    mlx_hook(data->mlx_win, 17, 1, &ft_close, 0);  
-    mlx_hook(data->mlx_win,2 ,0 ,  &bonus_key_hook ,data);
-    //mlx_loop_hook(data->mlx_win, &animation, data);
-    //mlx_hook(data->mlx_win, 6, 0L, mouse_pos, data);   
+    mlx_hook(data->mlx_win, 17, 1, ft_close, 0);
+    mlx_hook(data->mlx_win, 2, 1L<<0, add_key_press, data);
+    mlx_hook(data->mlx_win, 3, 1L<<1, add_key_release, data);
+    mlx_loop_hook(data->mlx, render_map, data);
     mlx_loop(data->mlx);
 }
 
 void init(t_data *data)
 {
+    int i;
+
+    i = -1;
     data->minimap.mlx_img = mlx_new_image(data->mlx, 200, 200);
     data->minimap.addr = mlx_get_data_addr(data->minimap.mlx_img, &data->minimap.bpp, &data->minimap.line_len, &data->minimap.endian);
     data->door.mlx_img = mlx_xpm_file_to_image(data->mlx, "img/door.xpm", &data->door.w, &data->door.h);
@@ -52,4 +55,6 @@ void init(t_data *data)
     put_black_pixel(data);
     data->player_dx = cos(data->player_a * PI/180) * PX;
     data->player_dy = sin(data->player_a * PI/180) * PX;
+    while(++i < 8)
+        data->keys[i] = 0;
 }

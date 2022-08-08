@@ -16,4 +16,6 @@ void look_right(t_data *data)
 {
     data->player_a += RA;
     data->player_a = data->player_a % 360;
+     rendering_3dbonus_map(data);
+    mini_map(data);
 }

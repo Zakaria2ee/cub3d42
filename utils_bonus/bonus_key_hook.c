@@ -3,34 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_key_hook.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 12:56:38 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/07 21:47:52 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/08 16:37:54 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-int bonus_key_hook(int keycode, t_data *data)
+int render_map(t_data *data)
 {
-    if(keycode == 53)
+    usleep(300*200);
+    if(data->keys[0] == 1)
         ft_exit("Exit\n");
-    else if (keycode == 13)
-        move_stright_b(data);
-    else if(keycode == 123)
+    if (data->keys[1] == 1)
+        move_stright(data);
+    if(data->keys[2] == 1)
         look_left(data);
-    else if(keycode == 124)
+    if(data->keys[3] == 1)
         look_right(data);
-    else if(keycode == 1)
-        move_back_b(data);
-    else if(keycode == 0)
+    if(data->keys[4] == 1)
+        move_back(data);
+    if(data->keys[5] == 1)
         move_left(data);
-    else if(keycode == 2)
+    if(data->keys[6] == 1)
         move_right(data);
-    else if (keycode == 49)
+    if (data->keys[7] == 1)
         open_door(data);
-    rendering_3dbonus_map(data);
-    mini_map(data);
     return (0);
 }
