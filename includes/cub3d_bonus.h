@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 13:01:41 by mabenchi          #+#    #+#             */
-/*   Updated: 2022/08/11 14:34:00 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/11 17:25:47 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,8 @@ typedef struct  data_t
     int ray_x;
     int ray_y;
     int color;
-    t_img img;
+    t_img screen;
+    t_img monster;
     t_img black;
     t_img door;
 	int	  opened_door;

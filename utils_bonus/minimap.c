@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 11:50:44 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/11 13:34:47 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/11 19:21:41 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,23 +112,23 @@ void mini_map(t_data *data)
     f_j = j;
     draw_plus(data, &i, &j, f_j);
     k = i;
-    while ((j - f_j) < 200 && j >= 0 && data->map[(int)(j / 50)])
+    while ((int)(j / 50) < data->line && (j - f_j) < 200 && j >= 0 && data->map[(int)(j / 50)])
     {
         i = k;
-        while ((i - f_i) < 200 && i >= 0 && data->map[(int)(j / 50)][(int)(i / 50)])
+        while ((i - f_i) < 200 && (size_t)(i / 50) < ft_strlen(data->map[(int)(j / 50)]) && i >= 0 && data->map[(int)(j / 50)][(int)(i / 50)])
         {
             if (!in_circle(i - f_i, j - f_j, 200))
                 ft_put_pxl(&(data->minimap), i - f_i, j - f_j, 0xFF000000);
-            else if ((int)(j / 50) < data->line && (size_t)(i / 50) < ft_strlen(data->map[(int)(j / 50)]) && data->map[(int)(j / 50)][(int)(i / 50)] == '0')
+            else if ((size_t)(i / 50) < ft_strlen(data->map[(int)(j / 50)]) && data->map[(int)(j / 50)][(int)(i / 50)] == '0')
                 ft_put_pxl(&(data->minimap), i - f_i, j - f_j, 0xFFFFFF);
-            else if ((int)(j / 50) < data->line && (size_t)(i / 50) < ft_strlen(data->map[(int)(j / 50)]) && data->map[(int)(j / 50)][(int)(i / 50)] == '1')
+            else if ((size_t)(i / 50) < ft_strlen(data->map[(int)(j / 50)]) && data->map[(int)(j / 50)][(int)(i / 50)] == '1')
                 ft_put_pxl(&(data->minimap), i - f_i, j - f_j, 0x000000);
             else
-                ft_put_pxl(&(data->minimap), i - f_i, j - f_j, 0xFF00FF);
+                ft_put_pxl(&(data->minimap), i - f_i, j - f_j, 0xF0F0FF);
             i++;
         }
         j++;
     }
     drawcircle(data, 85, 85, 30, 0x000000);
-    mlx_put_image_to_window(data->mlx, data->mlx_win, data->minimap.mlx_img, 1000,600);
+    mlx_put_image_to_window(data->mlx, data->mlx_win, data->minimap.mlx_img, 1000, 600);
 }

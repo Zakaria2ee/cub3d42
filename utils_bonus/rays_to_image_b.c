@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:48:59 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/11 13:35:46 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/11 17:24:25 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,15 @@ void rays_to_image_b(t_data *data, double *rays)
 {
     int current_y;
     int current_x;
-    t_img img;
 
-    img.mlx_img = mlx_new_image(data->mlx, RSX, RSY);
-    img.addr = mlx_get_data_addr(img.mlx_img, &img.bpp, &img.line_len, &img.endian);
     current_y = RSY - 1;
     current_x = 0;
     while(current_x < RSX)
     {
-        put_pixles_b(img, current_x, rays, data);
+        put_pixles_b(data->screen, current_x, rays, data);
         current_x++;
     }
-    mlx_put_image_to_window(data->mlx, data->mlx_win, img.mlx_img, 0,0);
+    mlx_put_image_to_window(data->mlx, data->mlx_win, data->screen.mlx_img, 0,0);
 }
 
 static int get_color_b(t_data *data, int *dirRay, int y, int d)
@@ -74,7 +71,7 @@ void put_pixles_b(t_img img, int current_x, double *rays,  t_data *data)
         if (((distance(current_x, current_y, RSX / 2, RSY) - current_y - 100) / 8 ) > 0)
             v = 1;
         if (!v)
-            ft_put_pxl(&img, current_x, current_y, data->Floor + ((unsigned char)((distance(current_x, current_y, RSX / 2, RSY) - current_y -200) / 8 ) << 24));
+            ft_put_pxl(&img, current_x, current_y, data->Floor + ((unsigned char)((distance(current_x, current_y, RSX / 2, RSY) - current_y - 150) / 8 ) << 24));
         else
             ft_put_pxl(&img, current_x, current_y, 0x000000);
         current_y--;

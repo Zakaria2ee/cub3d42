@@ -6,21 +6,11 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 14:25:03 by mabenchi          #+#    #+#             */
-/*   Updated: 2022/08/11 15:33:34 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/11 19:35:45 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d_bonus.h"
-
-int ft_strlennl(char *s)
-{
-	int i;
-
-	i = 0;
-	while (s[i] && s[i] != '\n')
-		i++;
-	return (i);
-}
 
 void	check_doors(t_data *data)
 {
@@ -57,27 +47,33 @@ void	open_door(t_data *data)
 	{
 		data->map[(int)(data->player_y / 50) - 1][(int)(data->player_x / 50)] = '9';
 		data->opened_door = 1;
+		rendering_3dbonus_map(data);
+		mini_map(data);
 	}
 	else if (data->map[(int)(data->player_y / 50) + 1][(int)(data->player_x / 50)] == 'D'
 		&& data->player_a > 0 && data->player_a < 180)
 	{
 		data->map[(int)(data->player_y / 50) + 1][(int)(data->player_x / 50)] = '9';
 		data->opened_door = 2;
+		rendering_3dbonus_map(data);
+		mini_map(data);
 	}
 	else if (data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) - 1] == 'D'
 		&& (data->player_a > 90 && data->player_a < 270))
 	{
 		data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) - 1] = '9';
 		data->opened_door = 3;
+		rendering_3dbonus_map(data);
+		mini_map(data);
 	}
 	else if (data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) + 1] == 'D'
 		&& (data->player_a > 270 || data->player_a < 90))
 	{
 		data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) + 1] = '9';
 		data->opened_door = 4;
+		rendering_3dbonus_map(data);
+		mini_map(data);
 	}
-    rendering_3dbonus_map(data);
-	mini_map(data);
 }
 
 void	close_door(t_data *data)

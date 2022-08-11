@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 09:49:54 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/11 13:35:48 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/11 18:21:02 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void init(t_data *data)
     int i;
 
     i = -1;
+    data->screen.mlx_img = mlx_new_image(data->mlx, RSX, RSY);
+    data->screen.addr = mlx_get_data_addr(data->screen.mlx_img, &data->screen.bpp, &data->screen.line_len, &data->screen.endian);
     data->minimap.mlx_img = mlx_new_image(data->mlx, 200, 200);
     data->minimap.addr = mlx_get_data_addr(data->minimap.mlx_img, &data->minimap.bpp, &data->minimap.line_len, &data->minimap.endian);
     data->door.mlx_img = mlx_xpm_file_to_image(data->mlx, "img/door.xpm", &data->door.w, &data->door.h);
