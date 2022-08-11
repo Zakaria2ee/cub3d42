@@ -1,20 +1,21 @@
- /* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_right.c                                       :+:      :+:    :+:   */
+/*   ft_put_pxl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/22 17:03:05 by zboudair          #+#    #+#             */
-/*   Updated: 2022/07/24 18:10:39 by zboudair         ###   ########.fr       */
+/*   Created: 2022/08/11 11:39:24 by zboudair          #+#    #+#             */
+/*   Updated: 2022/08/11 11:40:13 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-void look_right(t_data *data)
+void ft_put_pxl(t_img *img, int x, int y, int color)
 {
-    data->player_a += RA;
-    data->player_a = data->player_a % 360;
-    rendering_3d_map(data);
+    char    *pixel;
+
+    pixel = img->addr + (y * img->line_len + x * (img->bpp / 8));
+	*(int *)pixel = color;
 }

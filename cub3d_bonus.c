@@ -6,7 +6,7 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 12:49:22 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/04 13:39:26 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/11 11:57:16 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ int main(int ac, char **argv)
         return (0);
     t_data data;
     parsing(argv, &data);
-    rendering_bonus(&data);
+    //rendering_bonus(&data);
 }

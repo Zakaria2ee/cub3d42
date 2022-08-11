@@ -6,7 +6,7 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 11:39:03 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/08 16:15:57 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/11 11:46:17 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,6 +157,8 @@ int	    ft_atoi(const char	*str);
 
 
 int hexa_colors(char *str);
+void    ft_put_pxl(t_img *img, int x, int y, int color);
+void    put_pixles(t_img img, int current_x, double *rays,  t_data *data);
 
 //-----------bonus-------//
 void    rendering_3dbonus_map(t_data *data);

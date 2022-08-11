@@ -6,7 +6,7 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 17:03:19 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/08 16:34:25 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/11 11:45:20 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,5 @@ void move_back(t_data *data)
         return ;
     data->player_x -= round(PX * cos(data->player_a * PI/180));
     data->player_y -= round(PX * sin(data->player_a * PI/180));
-    rendering_3dbonus_map(data);
-    mini_map(data);
+    rendering_3d_map(data);
 }

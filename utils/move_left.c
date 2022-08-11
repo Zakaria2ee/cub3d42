@@ -6,7 +6,7 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 10:35:01 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/08 16:34:31 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/11 11:48:07 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,5 @@ void move_left(t_data *data)
         return ;
     data->player_x += PX * cos(angle * PI/180);
     data->player_y += PX * sin(angle * PI/180);
-    rendering_3dbonus_map(data);
-    mini_map(data);
+    rendering_3d_map(data);
 }

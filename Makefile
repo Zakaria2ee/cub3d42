@@ -11,12 +11,13 @@ FLGS = -Wextra -Wall -Werror -O3
 
 FUNCTION = utils/ft_exit.c utils/ft_check_extention.c utils/get_next_line.c \
 		utils/get_textures.c utils/get_map.c utils/error_handler.c utils/ft_close.c \
-		 utils/move_stright.c utils/look_left.c utils/look_right.c \
-		utils/move_back.c utils/walls_checker.c utils/rays_counter.c utils/move_left.c \
-		utils/move_right.c   utils/rays_to_image.c \
-		 utils/ft_isnum.c utils/put_black_img.c utils/parse.c \
+		utils/look_left.c utils/look_right.c utils/walls_checker.c  \
+		utils/move_left.c utils/move_right.c  utils/put_black_img.c \
+		utils/parse.c utils/ft_put_pxl.c \
 
-UTLS = utils/render.c  utils/rendering_3D_map.c utils/key_hook.c
+UTLS = utils/render.c  utils/rendering_3D_map.c utils/key_hook.c  utils/move_stright.c utils/move_back.c\
+		utils/rays_to_image.c utils/rays_counter.c
+
 		
 
 UTLS_BONUS = utils_bonus/rendering_3dbonus_map.c utils_bonus/render_bonus.c utils_bonus/bonus_key_hook.c utils_bonus/minimap.c \
@@ -25,7 +26,8 @@ UTLS_BONUS = utils_bonus/rendering_3dbonus_map.c utils_bonus/render_bonus.c util
  
 LIBFT = libft/ft_strjoin.c libft/ft_strlen.c libft/ft_strcmp.c \
 		libft/ft_split.c libft/ft_memcmp.c libft/ft_putstr_fd.c \
-		libft/ft_strdup.c libft/ft_substr.c libft/ft_atoi.c
+		libft/ft_strdup.c libft/ft_substr.c libft/ft_atoi.c utils/ft_isnum.c \
+
 
 
 SRCS = 

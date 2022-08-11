@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rays_to_image_b.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:48:59 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/08 17:43:23 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/11 11:39:00 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,12 +100,4 @@ void put_pixles_b(t_img img, int current_x, double *rays,  t_data *data)
         ft_put_pxl(&img, current_x, current_y, data->Sky + ((unsigned char)color << 24));
         current_y--;
     }
-}
-
-void ft_put_pxl(t_img *img, int x, int y, int color)
-{
-    char    *pixel;
-
-    pixel = img->addr + (y * img->line_len + x * (img->bpp / 8));
-	*(int *)pixel = color;
 }
