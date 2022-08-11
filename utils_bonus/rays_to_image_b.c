@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rays_to_image_b.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:48:59 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/11 11:39:00 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/11 13:35:46 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
+#include "../includes/cub3d_bonus.h"
 
 void put_pixles_b(t_img img, int current_x, double *rays,  t_data *data);
 

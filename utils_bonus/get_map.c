@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_bonus.c                                      :+:      :+:    :+:   */
+/*   get_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/04 12:49:22 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/11 13:56:48 by mabenchi         ###   ########.fr       */
+/*   Created: 2022/07/21 10:50:50 by zboudair          #+#    #+#             */
+/*   Updated: 2022/08/11 13:34:32 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/cub3d_bonus.h"
+#include "../includes/cub3d_bonus.h"
 
-int main(int ac, char **argv)
+void get_map(char **argv, t_data *data)
 {
-    if(ac != 2)
-        return (0);
-    t_data data;
-    parsing_b(argv, &data);
-    rendering_bonus(&data);
+    char *s;
+    (void)argv;
+    s = get_next_line(data->fd);
+    data->saved = NULL;
+    while(s)
+    {
+        data->saved = ft_strjoin(data->saved, s);
+        s = get_next_line(data->fd);
+    }
+    close(data->fd);
 }

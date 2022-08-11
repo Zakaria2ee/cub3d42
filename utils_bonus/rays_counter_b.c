@@ -6,11 +6,11 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:44:12 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/07 21:11:06 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/11 13:35:42 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
+#include "../includes/cub3d_bonus.h"
 
 double get_ray_b(t_data *data, double angle, int i, int r);
 

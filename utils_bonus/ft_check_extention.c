@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_bonus.c                                      :+:      :+:    :+:   */
+/*   ft_check_extention.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/04 12:49:22 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/11 13:56:48 by mabenchi         ###   ########.fr       */
+/*   Created: 2022/07/19 12:46:56 by zboudair          #+#    #+#             */
+/*   Updated: 2022/08/11 13:34:17 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/cub3d_bonus.h"
+#include "../includes/cub3d_bonus.h"
 
-int main(int ac, char **argv)
+void	check_extention(char *path)
 {
-    if(ac != 2)
-        return (0);
-    t_data data;
-    parsing_b(argv, &data);
-    rendering_bonus(&data);
+	int	len_path;
+
+	len_path = ft_strlen(path);
+	if (len_path < 4)
+		ft_exit("Error\nwrong Extention\n");
+	if(path[len_path - 5] == '.' || path[len_path - 5] == '/')
+		ft_exit("Error\nwrong Extention\n");
+	if (ft_strcmp(path + len_path - 4, ".cub"))
+		ft_exit("Error\nwrong Extention\n");
 }

@@ -6,11 +6,11 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 12:56:38 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/08 17:54:13 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/11 14:26:04 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
+#include "../includes/cub3d_bonus.h"
 
 int render_map(t_data *data)
 {
@@ -31,5 +31,6 @@ int render_map(t_data *data)
         move_right(data);
     if (data->keys[7] == 1)
         open_door(data);
+    close_door(data);
     return (0);
 }

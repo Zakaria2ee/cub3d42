@@ -6,11 +6,11 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 12:55:25 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/07 15:03:23 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/11 13:35:53 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
+#include "../includes/cub3d_bonus.h"
 
 void rendering_3dbonus_map(t_data *data)
 {

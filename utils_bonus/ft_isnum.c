@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_bonus.c                                      :+:      :+:    :+:   */
+/*   ft_isnum.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/04 12:49:22 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/11 13:56:48 by mabenchi         ###   ########.fr       */
+/*   Created: 2022/08/01 10:08:59 by zboudair          #+#    #+#             */
+/*   Updated: 2022/08/11 13:34:24 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/cub3d_bonus.h"
+#include "../includes/cub3d_bonus.h"
 
-int main(int ac, char **argv)
+int ft_isnum(char c)
 {
-    if(ac != 2)
-        return (0);
-    t_data data;
-    parsing_b(argv, &data);
-    rendering_bonus(&data);
+    if(c >= '0' && c <= '9')
+        return (1);
+    return (0);
 }

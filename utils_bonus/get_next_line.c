@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_bonus.c                                      :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/04 12:49:22 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/11 13:56:48 by mabenchi         ###   ########.fr       */
+/*   Created: 2022/07/21 09:08:53 by zboudair          #+#    #+#             */
+/*   Updated: 2022/08/11 13:34:34 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/cub3d_bonus.h"
+#include "../includes/cub3d_bonus.h"
 
-int main(int ac, char **argv)
+char *get_next_line(int fd)
 {
-    if(ac != 2)
-        return (0);
-    t_data data;
-    parsing_b(argv, &data);
-    rendering_bonus(&data);
+    char *s;
+    char *tmp;
+
+
+    s = malloc(1000);
+
+    tmp = s;
+    while(read(fd, tmp, 1) > 0 && *tmp++ != '\n');
+    if(tmp > s)
+    {
+        *tmp = 0;
+        return s;
+    }
+    else
+    {
+        free(s);
+        return (NULL);
+    }
 }
