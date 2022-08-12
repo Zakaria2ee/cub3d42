@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_extention.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 12:46:56 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/04 12:33:03 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/12 17:11:17 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	check_extention(char *path)
 	len_path = ft_strlen(path);
 	if (len_path < 4)
 		ft_exit("Error\nwrong Extention\n");
-	if(path[len_path - 5] == '.' || path[len_path - 5] == '/')
+	if (path[len_path - 5] == '.' || path[len_path - 5] == '/')
 		ft_exit("Error\nwrong Extention\n");
 	if (ft_strcmp(path + len_path - 4, ".cub"))
 		ft_exit("Error\nwrong Extention\n");

@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 11:50:44 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/11 19:21:41 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/12 17:03:31 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,24 @@ void    drawcircle(t_data *data, float x, float y, int w, int color)
     int i;
     int j;
 
+    i = 0;
+    j = 0;
+    x += 5 * cos(data->player_a * PI / 180);
+    y += 5 * sin(data->player_a * PI / 180);
+    while (i < w && x + i < 200)
+    {
+        j = 0;
+        while (j < w && y + j < 200)
+        {
+            if (sqrt(((x + (w / 2) - (x + i)) *  (x + (w / 2) - (x + i)))
+            + ((y + (w / 2) - (y + j)) * (y + (w / 2) - (y + j)))) < 3)
+                ft_put_pxl(&(data->minimap), x + i, y + j, 0XFF0000);
+            j++;
+        }
+        i++;
+    }
+    x -= 5 * cos(data->player_a * PI / 180);
+    y -= 5 * sin(data->player_a * PI / 180);
     i = 0;
     j = 0;
     while (i < w && x + i < 200)
@@ -80,23 +98,6 @@ static void draw_plus(t_data *data, int *i, int *j, int f_j)
         k++;
     }
 }
-
-// void rotate_point(t_point *p, int x, int y, float angle)
-// {
-//     double c = cos((angle + 90) * PI/ 180);
-//     double s = sin((angle + 90) * PI / 180);
-//     float xnew;
-//     float ynew;
-    
-//     p->x -= x;
-//     p->y -= y;
-    
-//     ynew = c * p->x + s * p->y + y;
-//     xnew = s * p->x - c * p->y + x;
-
-//     p->x = xnew;
-//     p->y = ynew;
-// }
 
 void mini_map(t_data *data)
 {

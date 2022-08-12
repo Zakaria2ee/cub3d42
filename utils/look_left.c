@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   look_left.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 16:55:42 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/11 11:48:25 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/12 17:18:32 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-void look_left(t_data *data)
+void	look_left(t_data *data)
 {
-    data->player_a -= RA;
-    if(data->player_a < 0)
-        data->player_a += 360;
-    rendering_3d_map(data);
+	data->player_a -= RA;
+	if (data->player_a < 0)
+		data->player_a += 360;
+	rendering_3d_map(data);
 }

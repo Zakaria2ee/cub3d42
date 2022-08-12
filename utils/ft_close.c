@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_close.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 11:26:24 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/04 12:33:07 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/12 17:11:42 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-int  ft_close()
+int	ft_close(void)
 {
-    ft_exit("Exit\n");
-    return (0);
+	ft_exit("Exit\n");
+	return (0);
 }
