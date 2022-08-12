@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 14:25:03 by mabenchi          #+#    #+#             */
-/*   Updated: 2022/08/11 19:35:45 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/12 16:06:31 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,20 @@ void	open_door(t_data *data)
 
 void	close_door(t_data *data)
 {
-	if (data->opened_door == 2 && data->map[(int)(data->player_y / 50) - 1][(int)(data->player_x / 50)] == '9')
-		data->map[(int)(data->player_y / 50) - 1][(int)(data->player_x / 50)] = 'D';
-	else if (data->opened_door == 1 && data->map[(int)(data->player_y / 50) + 1][(int)(data->player_x / 50)] == '9')
-		data->map[(int)(data->player_y / 50) + 1][(int)(data->player_x / 50)] = 'D';
-	else if (data->opened_door == 4 && data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) - 1] == '9')
-		data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) - 1] = 'D';
-	else if (data->opened_door == 3 && data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) + 1] == '9')
-		data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) + 1] = 'D';
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (i < data->line && data->map[i])
+	{
+		j = 0;
+		while ((size_t)j < ft_strlen(data->map[i]))
+		{
+			if (data->map[i][j] == '9' && distance(j * 50, i * 50, data->player_x, data->player_y) > 100)
+				data->map[i][j] = 'D';
+			j++;
+		}
+		i++;
+	}
 }

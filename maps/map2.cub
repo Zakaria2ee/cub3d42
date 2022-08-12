@@ -1,7 +1,7 @@
-NO ./path_to_the_north_texture
-SO ./path_to_the_south_texture
-WE ./path_to_the_west_texture
-EA ./path_to_the_east_texture
+NO img/Brickwall2.xpm
+SO img/Brickwall3.xpm
+WE img/Brickwall4.xpm
+EA img/Stonewall.xpm
 F 255,255,150
 C 44,44,44
         1111111111111111111111111

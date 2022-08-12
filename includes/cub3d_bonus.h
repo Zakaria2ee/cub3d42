@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 13:01:41 by mabenchi          #+#    #+#             */
-/*   Updated: 2022/08/11 17:25:47 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/12 15:59:35 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,4 +169,5 @@ int add_key_release(int keycode, t_data *data);
 int add_key_press(int keycode, t_data *data);
 int render_map(t_data *data);
 void	close_door(t_data *data);
+double distance(int x, int y, int x1, int y1);
 #endif

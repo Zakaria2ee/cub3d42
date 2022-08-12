@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 19:34:44 by mabenchi          #+#    #+#             */
-/*   Updated: 2022/08/11 13:35:20 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/12 15:01:29 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int hexa_colors(char *str)
     int start;
     int res[3];
 
-    i =0;
+    i = 0;
     start = 0;
     j = 0;
     while(str[i])
@@ -39,7 +39,6 @@ int hexa_colors(char *str)
         while(ft_isnum(str[i]))
             i++;
         s = ft_substr(str, start, (i - start));
-       
         start = i + 1;
         res[j] = ft_atoi(s); 
         
