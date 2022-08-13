@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 11:45:09 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/12 17:11:12 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/13 11:15:56 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	empty_errors(t_data *data)
 			if (delimiters(data->map[i][j]) && data->map[i][j] != '1'
 				&& data->map[i][j] != '0' && data->map[i][j] != 'D')
 			{
-				data->player_y =  (i * 50) + 25;
+				data->player_y = (i * 50) + 25;
 				data->player_x = (j * 50) + 25;
 			}
 			j++;
@@ -87,7 +87,7 @@ void	check_space(int i, int j, char **map)
 		ft_exit("ERROR\n");
 }
 
-int delimiters(char c)
+int	delimiters(char c)
 {
 	if (c == '1' || c == 'N' || c == 'S'
 		|| c == 'E' || c == 'W' || c == '0' || c == 'D')

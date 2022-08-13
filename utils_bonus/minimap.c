@@ -6,35 +6,17 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 11:50:44 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/12 17:03:31 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/13 14:05:29 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d_bonus.h"
 
-void    drawcircle(t_data *data, float x, float y, int w, int color)
+void    drawcircle(t_data *data, float x, float y, int w)
 {
     int i;
     int j;
 
-    i = 0;
-    j = 0;
-    x += 5 * cos(data->player_a * PI / 180);
-    y += 5 * sin(data->player_a * PI / 180);
-    while (i < w && x + i < 200)
-    {
-        j = 0;
-        while (j < w && y + j < 200)
-        {
-            if (sqrt(((x + (w / 2) - (x + i)) *  (x + (w / 2) - (x + i)))
-            + ((y + (w / 2) - (y + j)) * (y + (w / 2) - (y + j)))) < 3)
-                ft_put_pxl(&(data->minimap), x + i, y + j, 0XFF0000);
-            j++;
-        }
-        i++;
-    }
-    x -= 5 * cos(data->player_a * PI / 180);
-    y -= 5 * sin(data->player_a * PI / 180);
     i = 0;
     j = 0;
     while (i < w && x + i < 200)
@@ -44,9 +26,20 @@ void    drawcircle(t_data *data, float x, float y, int w, int color)
         {
             if (sqrt(((x + (w / 2) - (x + i)) *  (x + (w / 2) - (x + i)))
             + ((y + (w / 2) - (y + j)) * (y + (w / 2) - (y + j)))) < 5)
-                ft_put_pxl(&(data->minimap), x + i, y + j, color);
+                ft_put_pxl(&(data->minimap), x + i, y + j, 0x000000);
             j++;
         }
+        i++;
+    }
+    i = 0;
+    j = 0;
+    x = 100;
+    y = 100;
+    while (i < w && x + i < 200)
+    {
+        ft_put_pxl(&(data->minimap), x, y, 0xFF0000);
+        x += cos(data->player_a * PI / 180);
+        y += sin(data->player_a * PI / 180);
         i++;
     }
 }
@@ -130,6 +123,6 @@ void mini_map(t_data *data)
         }
         j++;
     }
-    drawcircle(data, 85, 85, 30, 0x000000);
+    drawcircle(data, 85, 85, 30);
     mlx_put_image_to_window(data->mlx, data->mlx_win, data->minimap.mlx_img, 1000, 600);
 }

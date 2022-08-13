@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:48:59 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/12 17:38:07 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/13 13:40:19 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	rays_to_image(t_data *data, double *rays)
 	t_img	img;
 
 	img.mlx_img = mlx_new_image(data->mlx, RSX, RSY);
-	img.addr = mlx_get_data_addr(img.mlx_img, &img.bpp, &img.line_len, &img.endian);
+	img.addr = mlx_get_data_addr(img.mlx_img,
+			&img.bpp, &img.line_len, &img.endian);
 	current_y = RSY - 1;
 	current_x = 0;
 	while (current_x < RSX)
@@ -63,7 +64,7 @@ void	put_pixles(t_img img, int current_x, double *rays,  t_data *data)
 	int	to_draw;
 
 	current_y = RSY - 1;
-	i = (RSY - (RSY * 50/rays[current_x])) / 2;
+	i = (RSY - (RSY * 50 / rays[current_x])) / 2;
 	while (i > 0)
 	{
 		ft_put_pxl(&img, current_x, current_y, data->Floor);

@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 09:01:23 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/12 17:17:06 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/13 11:17:20 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	check_path(char *s, t_data *data)
 	else if (!ft_memcmp(s, "WE ", 3))
 	{
 		s += 3;
-		data->West= ft_strdup((s += skip_space(s)));
+		data->West = ft_strdup((s += skip_space(s)));
 	}
 	else if (!ft_memcmp(s, "F ", 2))
 	{
@@ -68,12 +68,12 @@ void	check_path(char *s, t_data *data)
 		ft_exit("Error\nWrong texture\n");
 }
 
-int skip_space(char *s)
+int	skip_space(char *s)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while(s[i] == ' ')
-        i++;
-    return (i);
+	i = 0;
+	while (s[i] == ' ')
+		i++;
+	return (i);
 }
