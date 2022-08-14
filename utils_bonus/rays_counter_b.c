@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:44:12 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/14 15:58:07 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/14 16:22:01 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,17 @@ void	rays_counter_b(t_data *data, double *rays)
 	}
 }
 
-static int	direction(int dirRay, int x, int y, t_data *data)
+static int	direction(int dirray, int x, int y, t_data *data)
 {
-	if (dirRay == 'x' && (data->player_x > x))
-		dirRay = 's';
-	else if (dirRay == 'x')
-		dirRay = 'n';
-	else if (dirRay == 'y' && (data->player_y > y))
-		dirRay = 'e';
+	if (dirray == 'x' && (data->player_x > x))
+		dirray = 's';
+	else if (dirray == 'x')
+		dirray = 'n';
+	else if (dirray == 'y' && (data->player_y > y))
+		dirray = 'e';
 	else
-		dirRay = 'w';
-	return (dirRay);
+		dirray = 'w';
+	return (dirray);
 }
 
 int	reach_wall(t_data *data, double angle, double *x, double *y)
@@ -87,12 +87,12 @@ double	get_ray_b(t_data *data, double angle, int i, int r)
 					* (data->player_y - y)))) * cos(r * PI / 180);
 	if (ray < 1)
 		ray = 1;
-	data->dirRay[i][0] = direction(d_ray, x, y, data);
-	data->dirRay[i][2] = data->is_door;
+	data->dirray[i][0] = direction(d_ray, x, y, data);
+	data->dirray[i][2] = data->is_door;
 	data->is_door = 0;
-	if (data->dirRay[i][0] == 's' || data->dirRay[i][0] == 'n')
-		data->dirRay[i][1] = (int)(y * 4) % TEXY;
+	if (data->dirray[i][0] == 's' || data->dirray[i][0] == 'n')
+		data->dirray[i][1] = (int)(y * 4) % TEXY;
 	else
-		data->dirRay[i][1] = (int)(x * 4) % TEXX;
+		data->dirray[i][1] = (int)(x * 4) % TEXX;
 	return (ray);
 }

@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:48:59 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/14 16:04:44 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/14 16:22:15 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,27 +30,27 @@ void	rays_to_image_b(t_data *data, double *rays)
 		data->screen.mlx_img, 0, 0);
 }
 
-static int	get_color_b(t_data *data, int *dirRay, int y, int d)
+static int	get_color_b(t_data *data, int *dirray, int y, int d)
 {
 	int	pixel;
 
 	if (d > 180)
 		d = 180;
-	if (dirRay[2] == 'D')
+	if (dirray[2] == 'D')
 		pixel = (*(int *)(data->door.addr + (y * data->door.line_len
-						+ dirRay[1] * (data->door.bpp / 8))));
-	else if (dirRay[0] == 's')
+						+ dirray[1] * (data->door.bpp / 8))));
+	else if (dirray[0] == 's')
 		pixel = (*(int *)(data->s.addr + (y * data->s.line_len
-						+ dirRay[1] * (data->s.bpp / 8))));
-	else if (dirRay[0] == 'w')
+						+ dirray[1] * (data->s.bpp / 8))));
+	else if (dirray[0] == 'w')
 		pixel = (*(int *)(data->we.addr + (y * data->we.line_len
-						+ dirRay[1] * (data->we.bpp / 8))));
-	else if (dirRay[0] == 'n')
+						+ dirray[1] * (data->we.bpp / 8))));
+	else if (dirray[0] == 'n')
 		pixel = (*(int *)(data->n.addr + (y * data->n.line_len
-						+ dirRay[1] * (data->n.bpp / 8))));
+						+ dirray[1] * (data->n.bpp / 8))));
 	else
 		pixel = (*(int *)(data->e.addr + (y * data->e.line_len
-						+ dirRay[1] * (data->e.bpp / 8))));
+						+ dirray[1] * (data->e.bpp / 8))));
 	return (pixel + ((unsigned char)d << 24));
 }
 
@@ -78,7 +78,7 @@ void	put_pixles_b(t_img img, int current_x, double *rays,  t_data *data)
 						RSX / 2, RSY) - current_y - 100) / 8) > 0)
 			v = 1;
 		if (!v)
-			ft_put_pxl(&img, current_x, current_y, data->Floor
+			ft_put_pxl(&img, current_x, current_y, data->floor
 				+ ((unsigned char)((distance(current_x, current_y, RSX / 2, RSY)
 							- current_y - 150) / 8) << 24));
 		else
@@ -92,7 +92,7 @@ void	put_pixles_b(t_img img, int current_x, double *rays,  t_data *data)
 		i -= (i - RSY) / 2;
 	while (i >= 0 && current_y > 0)
 	{
-		color = get_color_b(data, data->dirRay[current_x],
+		color = get_color_b(data, data->dirray[current_x],
 				(int)((float)((float)TEXY / (float)to_draw) *(float)i) % TEXY,
 				rays[current_x]);
 		ft_put_pxl(&img, current_x, current_y, color);
@@ -106,7 +106,7 @@ void	put_pixles_b(t_img img, int current_x, double *rays,  t_data *data)
 		else
 			color = current_y ;
 		ft_put_pxl(&img, current_x, current_y,
-			data->Sky + ((unsigned char)color << 24));
+			data->sky + ((unsigned char)color << 24));
 		current_y--;
 	}
 }
