@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 11:45:09 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/13 11:15:56 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/13 17:01:35 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,25 +108,16 @@ void	get_player_a(t_data *data)
 		while (data->map[i][j])
 		{
 			if (data->map[i][j] == 'N')
-			{
-				data->map[i][j] = '0';
 				data->player_a = 270;
-			}
 			else if (data->map[i][j] == 'S')
-			{
 				data->player_a = 90;
-				data->map[i][j] = '0';
-			}
 			else if (data->map[i][j] == 'E')
-			{
 				data->player_a = 0;
-				data->map[i][j] = '0';
-			}
 			else if (data->map[i][j] == 'W')
-			{
 				data->player_a = 180;
+			if (data->map[i][j] == 'N' || data->map[i][j] == 'S'
+				|| data->map[i][j] == 'E' || data->map[i][j] == 'W')
 				data->map[i][j] = '0';
-			}
 			j++;
 		}
 		i++;

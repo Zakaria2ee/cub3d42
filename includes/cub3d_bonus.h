@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 13:01:41 by mabenchi          #+#    #+#             */
-/*   Updated: 2022/08/12 15:59:35 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/13 16:40:31 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ typedef struct  data_t
     t_img monster;
     t_img black;
     t_img door;
+    t_img door_a[7];
 	int	  opened_door;
     int dirRay[RSX][3];
     int keys[8];
