@@ -6,14 +6,14 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 11:26:24 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/11 13:34:19 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/14 14:43:52 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d_bonus.h"
 
-int  ft_close()
+int	ft_close(void)
 {
-    ft_exit("Exit\n");
-    return (0);
+	ft_exit("Exit\n");
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 14:25:03 by mabenchi          #+#    #+#             */
-/*   Updated: 2022/08/12 16:06:31 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/14 14:37:54 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	check_doors(t_data *data)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -27,9 +27,10 @@ void	check_doors(t_data *data)
 			if (data->map[i][j] == 'D')
 			{
 				if ((j && data->map[i][j - 1] != '1')
-					|| ((size_t)(j + 1) < ft_strlen(data->map[i]) && data->map[i][j + 1] != '1'))
+					|| ((size_t)(j + 1) < ft_strlen(data->map[i])
+					&& data->map[i][j + 1] != '1'))
 				{
-					if((i && data->map[i - 1][j] != '1')
+					if ((i && data->map[i - 1][j] != '1')
 					|| (data->map[i + 1] && data->map[i + 1][j] != '1'))
 						ft_exit("ERROR\nA DOOR SHOULD BE BETWEEN WALLS\n");
 				}
@@ -78,8 +79,8 @@ void	open_door(t_data *data)
 
 void	close_door(t_data *data)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -88,7 +89,9 @@ void	close_door(t_data *data)
 		j = 0;
 		while ((size_t)j < ft_strlen(data->map[i]))
 		{
-			if (data->map[i][j] == '9' && distance(j * 50, i * 50, data->player_x, data->player_y) > 100)
+			if (data->map[i][j] == '9'
+				&& distance(j * 50, i * 50,
+					data->player_x, data->player_y) > 100)
 				data->map[i][j] = 'D';
 			j++;
 		}

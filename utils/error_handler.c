@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 11:45:09 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/13 17:01:35 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/14 14:38:38 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,11 @@ void	empty_errors(t_data *data)
 		{
 			if (data->map[i][j] == '0')
 				check_space(i, j, data->map);
-			if (data->map[i][j] != 'D' && data->map[i][j] != '1'
+			if (data->map[i][j] != '1'
 				&& data->map[i][j] != '0' && delimiters(data->map[i][j]))
 				counter++;
 			if (delimiters(data->map[i][j]) && data->map[i][j] != '1'
-				&& data->map[i][j] != '0' && data->map[i][j] != 'D')
+				&& data->map[i][j] != '0')
 			{
 				data->player_y = (i * 50) + 25;
 				data->player_x = (j * 50) + 25;
@@ -85,15 +85,6 @@ void	check_space(int i, int j, char **map)
 			&& !delimiters(map[i + 1][j]))
 			|| ((ft_strlen(map[i - 1]) < (size_t)j)))
 		ft_exit("ERROR\n");
-}
-
-int	delimiters(char c)
-{
-	if (c == '1' || c == 'N' || c == 'S'
-		|| c == 'E' || c == 'W' || c == '0' || c == 'D')
-		return (1);
-	else
-		return (0);
 }
 
 void	get_player_a(t_data *data)

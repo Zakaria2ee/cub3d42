@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 12:46:56 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/12 17:11:17 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/14 14:38:25 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,13 @@ void	check_extention(char *path)
 		ft_exit("Error\nwrong Extention\n");
 	if (ft_strcmp(path + len_path - 4, ".cub"))
 		ft_exit("Error\nwrong Extention\n");
+}
+
+int	delimiters(char c)
+{
+	if (c == '1' || c == 'N' || c == 'S'
+		|| c == 'E' || c == 'W' || c == '0')
+		return (1);
+	else
+		return (0);
 }

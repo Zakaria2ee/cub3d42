@@ -6,15 +6,15 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 10:08:59 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/11 13:34:24 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/14 14:44:19 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d_bonus.h"
 
-int ft_isnum(char c)
+int	ft_isnum(char c)
 {
-    if(c >= '0' && c <= '9')
-        return (1);
-    return (0);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }
