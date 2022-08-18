@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 11:39:03 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/14 16:28:57 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/16 14:33:24 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,31 +86,22 @@ typedef struct data_t
 	int		dirray[RSX][3];
 	int		keys[8];
 }	t_data;
-
+//------------parse----------------//
 void	init(t_data *data);
-void	check_extention(char *path);
 void	ft_exit(char *str);
 void	get_textures(char **argv, t_data *data);
 void	get_map(char **argv, t_data *data);
 int		parsing(char **argv, t_data *data);
 char	*get_next_line(int fd);
-void	check_path(char *s, t_data *data);
-void	error_handler(t_data *data);
-void	new_line_errors(char *str);
+//----------------------------------//
+//-----------utils---------------//
 int		ft_close(void);
 int		skip_space(char *s);
 int		delimiters(char c);
 void	rendering(t_data *data);
 int		key_hook(int keycode, t_data *data);
 void	init(t_data *data);
-void	empty_errors(t_data *data);
-void	check_space(int i, int j, char **map);
 void	rays_counter(t_data *data, double *rays);
-int		ft_isnum(char c);
-int		walls_checker(int x, int y, t_data *data);
-int		walls_checker2(int x, int y, float dy, float dx, t_data *data);
-int		walls_checker3(double x, double y, float dy, float dx, t_data *data);
-
 void	get_player_a(t_data *data);
 void	ft_put_pxl(t_img *img, int x, int y, int color);
 int		key_hook(int keycode, t_data *data);
@@ -118,15 +109,32 @@ void	rays_to_image(t_data *data, double *rays);
 void	rendering_3d_map(t_data *data);
 void	put_black_background(t_data *data);
 void	put_black_pixel(t_data *data);
+int		hexa_colors(char *str);
+void	ft_put_pxl(t_img *img, int x, int y, int color);
+void	put_pixles(t_img img, int current_x, double *rays,  t_data *data);
+//--------------------------------------------------//
+//----------------errors_check---------------//
+void	check_path(char *s, t_data *data);
+void	error_handler(t_data *data);
+void	check_extention(char *path);
+void	new_line_errors(char *str);
+void	check_space(int i, int j, char **map);
+void	empty_errors(t_data *data);
+int		walls_checker(int x, int y, t_data *data);
+int		walls_checker2(int x, int y, float dy, float dx, t_data *data);
+int		walls_checker3(double x, double y, float dy, float dx, t_data *data);
+//-----------------------------------------------//
 
+//--------moves-----------//
 void	move_back(t_data *data);
 void	move_stright(t_data *data);
 void	move_right(t_data *data);
 void	move_left(t_data *data);
-
 void	look_right(t_data *data);
 void	look_left(t_data *data);
+//-------------------------//
 
+//----------libft---------//
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strdup(char *str);
 void	ft_putstr_fd(char *s, int fd);
@@ -136,25 +144,6 @@ char	*ft_substr(char	const *s, unsigned	int start, size_t len);
 char	*ft_strjoin(char *s1, char *s2);
 char	**ft_split(char	const *s, char c);
 int		ft_atoi(const char	*str);
-int		hexa_colors(char *str);
-void	ft_put_pxl(t_img *img, int x, int y, int color);
-void	put_pixles(t_img img, int current_x, double *rays,  t_data *data);
-
-//-----------bonus-------//
-void	rendering_3dbonus_map(t_data *data);
-int		bonus_key_hook(int keycode, t_data *data);
-void	rendering_bonus(t_data *data);
-void	mini_map(t_data *data);
-int		parsing_b(char **argv, t_data *data);
-void	check_doors(t_data *data);
-void	rays_counter_b(t_data *data, double *rays);
-void	rays_to_image_b(t_data *data, double *rays);
-int		walls_checker3_b(double x, double y, float dy, float dx, t_data *data);
-void	open_door(t_data *data);
-void	move_stright_b(t_data *data);
-void	move_back_b(t_data *data);
-int		walls_checker2_b(int x, int y, float dy, float dx, t_data *data);
-int		add_key_release(int keycode, t_data *data);
-int		add_key_press(int keycode, t_data *data);
-int		render_map(t_data *data);
+int		ft_isnum(char c);
+//-------------------------//
 #endif
