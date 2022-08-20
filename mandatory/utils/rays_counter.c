@@ -6,14 +6,13 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:44:12 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/16 13:30:05 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/20 11:36:49 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
 static double	get_ray(t_data *data, double angle, int i, int r);
-
 void	rays_counter(t_data *data, double *rays)
 {
 	int		i;

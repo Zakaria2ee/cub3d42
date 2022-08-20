@@ -6,7 +6,7 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 11:38:50 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/17 14:32:15 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/19 15:40:00 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ int	main(int ac, char **argv)
 		return (0);
 	parsing(argv, &data);
 	rendering(&data);
+	system("leaks cub3d");
 }

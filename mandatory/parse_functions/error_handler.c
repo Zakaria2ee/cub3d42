@@ -6,7 +6,7 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 11:45:09 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/18 14:25:33 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/20 10:57:33 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ void	error_handler(t_data *data)
 	new_line_errors(data->saved);
 	data->map = ft_split(data->saved, '\n');
 	empty_errors(data);
+	check_invalid_textures(data->north);
+	check_invalid_textures(data->south);
+	check_invalid_textures(data->east);
+	check_invalid_textures(data->west);
 }
 
 void	new_line_errors(char *str)
@@ -36,39 +40,16 @@ void	new_line_errors(char *str)
 
 void	empty_errors(t_data *data)
 {
+	int j;
 	int	i;
-	int	j;
 	int	counter;
 
 	i = 0;
 	counter = 0;
-	data->column = 0;
-	data->line = 0;
 	while (data->map[i])
 	{
 		j = 0;
-		while (data->map[i][j])
-		{
-			if (data->map[i][j] == '0')
-				check_space(i, j, data->map);
-			if (data->map[i][j] != '1'
-				&& data->map[i][j] != '0' && delimiters(data->map[i][j]))
-				counter++;
-			if (delimiters(data->map[i][j]) && data->map[i][j] != '1'
-				&& data->map[i][j] != '0')
-			{
-				data->player_y = (i * 50) + 25;
-				data->player_x = (j * 50) + 25;
-			}
-			if(!delimiters(data->map[i][j]) && data->map[i][j] != ' ')
-				ft_exit("Error\n");
-			if(data->map[i][j] == 'N' || data->map[i][j] == 'S' || data->map[i][j] == 'E' 
-				|| data->map[i][j] == 'W')
-			{
-				check_space(i, j, data->map);
-			}
-			j++;
-		}
+		check_error(i, data, &counter, &j);
 		if (j > data->line)
 			data->line = j;
 		i++;
@@ -92,4 +73,30 @@ void	check_space(int i, int j, char **map)
 			&& !delimiters(map[i + 1][j]))
 			|| ((ft_strlen(map[i - 1]) < (size_t)j)))
 		ft_exit("ERROR\n");
+}
+
+void check_error(int i, t_data *data, int *counter, int *j)
+{
+	while (data->map[i][*j])
+	{
+		if (data->map[i][*j] == '0')
+			check_space(i, *j, data->map);
+		if (data->map[i][*j] != '1'
+			&& data->map[i][*j] != '0' && delimiters(data->map[i][*j]))
+			(*counter)++;
+		if (delimiters(data->map[i][*j]) && data->map[i][*j] != '1'
+			&& data->map[i][*j] != '0')
+		{
+			data->player_y = (i * 50) + 25;
+			data->player_x = (*j * 50) + 25;
+		}
+		if(!delimiters(data->map[i][*j]) && data->map[i][*j] != ' ')
+			ft_exit("Error\n");
+		if(data->map[i][*j] == 'N' || data->map[i][*j] == 'S' || data->map[i][*j] == 'E' 
+			|| data->map[i][*j] == 'W')
+		{
+			check_space(i, *j, data->map);
+		}
+		(*j)++;
+	}
 }

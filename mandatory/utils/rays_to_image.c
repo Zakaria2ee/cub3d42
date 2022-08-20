@@ -6,7 +6,7 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:48:59 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/16 13:30:03 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/20 11:47:45 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,34 +59,42 @@ static int	get_color(t_data *data, int *dirray, int y, int d)
 void	put_pixles(t_img img, int current_x, double *rays,  t_data *data)
 {
 	int	i;
-	int	color;
-	int	current_y;
 	int	to_draw;
 
-	current_y = RSY - 1;
+	data->current_y = RSY - 1;
 	i = (RSY - (RSY * 50 / rays[current_x])) / 2;
 	while (i > 0)
 	{
-		ft_put_pxl(&img, current_x, current_y, data->floor);
-		current_y--;
+		ft_put_pxl(&img, current_x, data->current_y, data->floor);
+		data->current_y--;
 		i--;
 	}
-	i = (RSY * 50 / rays[current_x]);
+	ini(&i, rays, current_x);
 	to_draw = i;
-	if (i > RSY)
-		i -= (i - RSY) / 2;
-	while (i >= 0 && current_y > 0)
+	while (i >= 0 && data->current_y > 0)
 	{
-		color = get_color(data, data->dirray[current_x],
+		data->tcolor = get_color(data, data->dirray[current_x],
 				(int)((float)((float)TEXY / (float)to_draw)
 					*(float)i) % TEXY, rays[current_x]);
-		ft_put_pxl(&img, current_x, current_y, color);
+		ft_put_pxl(&img, current_x, data->current_y, data->tcolor);
 		i--;
-		current_y--;
+		data->current_y--;
 	}
-	while (current_y >= 0)
+	render_sky(data, img, current_x);
+}
+
+void render_sky(t_data *data, t_img img, int current_x)
+{
+	while (data->current_y >= 0)
 	{
-		ft_put_pxl(&img, current_x, current_y, data->sky);
-		current_y--;
+		ft_put_pxl(&img, current_x, data->current_y, data->sky);
+		data->current_y--;
 	}
+}
+
+void ini(int *i,  double *rays, int current_x)
+{
+	*i = (RSY * 50 / rays[current_x]);
+	if (*i > RSY)
+		*i -= (*i - RSY) / 2;
 }

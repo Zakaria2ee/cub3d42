@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.c                                            :+:      :+:    :+:   */
+/*   skip_space.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/19 11:42:16 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/20 10:42:56 by zboudair         ###   ########.fr       */
+/*   Created: 2022/08/19 16:24:36 by zboudair          #+#    #+#             */
+/*   Updated: 2022/08/19 16:25:27 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-int	parsing(char **argv, t_data *data)
+int skip_space(char *s)
 {
-	init1(data);
-	check_extention(argv[1]);
-	get_textures(argv, data);
-	get_map(argv, data);
-	error_handler(data);
-	get_player_a(data);
-	return (0);
-}
+    int i;
 
-void init1(t_data *data)
-{
-	data->north = 0;
-	data->west = 0;
-	data->east = 0;
-	data->south = 0;
-	data->column = 0;
-	data->line = 0;
+    i = 0;
+    while(s[i] == ' ')
+        i++;
+    return (i);
 }

@@ -6,13 +6,12 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 14:29:41 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/18 14:30:53 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/20 11:21:23 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-int res_len(int *str);
 int	hexa_colors(char *str)
 {
 	char	*s;
@@ -21,23 +20,22 @@ int	hexa_colors(char *str)
 	int		start;
 	int		res[8];
 
-	i = 0;
+	i = -1;
 	start = 0;
 	j = 0;
-	while (str[i])
+	while (str[++i])
 	{
 		while (ft_isnum(str[i]))
 			i++;
 		s = ft_substr(str, start, (i - start));
 		start = i + 1;
 		res[j] = ft_atoi(s); 
-		if(!res[j])
+		if(!res[j++])
 			ft_exit("Error\nWrong color\n");
-		j++;
-		i++;
+		free(s);
 	}
-	if(res_len(res) > 3)
-		ft_exit("Error\nWrong Color\n");
+	res_len(res);
+	free(str);
 	return ((res[0] << 16) + (res[1] << 8) + res[2]);
 }
 
@@ -48,5 +46,7 @@ int res_len(int *str)
 	i = 0;
 	while(str[i])
 		i++;
+	if(i > 3)
+		ft_exit("Error\nWrong Color\n");
 	return (i);
 }

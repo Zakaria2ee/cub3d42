@@ -11,7 +11,8 @@ MLX =  -I /usr/local/include  -L /usr/local/lib -pthread -lmlx -framework OpenGL
 PARSE_FUNC = parse_functions/ft_check_extention.c parse_functions/get_next_line.c \
 			parse_functions/get_textures.c parse_functions/get_map.c parse_functions/ft_close.c\
 			parse_functions/ft_exit.c parse_functions/get_playerangle.c parse_functions/turn_hexa.c\
-			parse_functions/error_handler.c parse_functions/parse.c
+			parse_functions/error_handler.c parse_functions/parse.c parse_functions/skip_space.c \
+			parse_functions/invalid_textures.c
 			
 
 MOVES = moves/move_back.c moves/move_stright.c moves/move_left.c moves/move_right.c moves/look_left.c \
@@ -29,7 +30,7 @@ LIBFT = ../libft/ft_strjoin.c ../libft/ft_strlen.c ../libft/ft_strcmp.c \
 all: $(NAME)
 
 $(NAME):
-	@$(CC) $(FLGS) $(MLX) cub3d.c $(LIBFT) $(UTLS) $(MOVES) $(PARSE_FUNC)  -fsanitize=address -o $(NAME)
+	@$(CC) $(FLGS) $(MLX) cub3d.c $(LIBFT) $(UTLS) $(MOVES) $(PARSE_FUNC)  -o $(NAME)
 	@echo '\033[0;32m'"The programm compiled successefully"
 
 clean : 
