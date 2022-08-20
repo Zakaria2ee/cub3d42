@@ -6,7 +6,7 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:58:15 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/16 12:24:06 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/20 14:37:32 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	move_right(t_data *data)
 	else if (angle < 0)
 		angle += 360;
 	if (walls_checker3_b(data->player_x, data->player_y,
-			PX * sin(angle * PI / 180), PX * cos(angle * PI / 180), data))
+			15 * sin(angle * PI / 180), 15 * cos(angle * PI / 180), data))
 		return ;
 	data->player_x += PX * cos(angle * PI/180);
 	data->player_y += PX * sin(angle * PI/180);

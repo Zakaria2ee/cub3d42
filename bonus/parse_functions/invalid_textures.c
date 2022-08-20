@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_bonus.c                                      :+:      :+:    :+:   */
+/*   invalid_textures.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/05 19:34:44 by mabenchi          #+#    #+#             */
-/*   Updated: 2022/08/20 14:56:03 by zboudair         ###   ########.fr       */
+/*   Created: 2022/08/19 16:26:57 by zboudair          #+#    #+#             */
+/*   Updated: 2022/08/19 16:27:13 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cub3d_bonus.h"
+#include "../../includes/cub3d.h"
 
-int	parsing_b(char **argv, t_data *data)
+void check_invalid_textures(char *filename)
 {
-	init2(data);
-	check_extention(argv[1]);
-	get_textures(argv, data);
-	get_map(argv, data);
-	error_handler(data);
-	check_doors(data);
-	get_player_a(data);
-	return (0);
-}
+	int fd;
 
-void init2(t_data *data)
-{
-	data->east = 0;
-	data->west = 0;
-	data->south = 0;
-	data->north = 0;
+	fd = open(filename, O_RDONLY);
+	if(fd < 0)
+	{
+		ft_putstr_fd("ERROR\nInvalid texture\n", 2);	
+		exit(0);
+	}
+	else
+		close(0);
 }

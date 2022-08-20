@@ -6,14 +6,12 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 09:01:23 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/18 12:09:10 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/20 14:52:54 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-char *get_texture(char *s);
-void invalid_textures(char *filename);
 void get_textures(char **argv, t_data *data)
 {
     int count;
@@ -30,51 +28,20 @@ void get_textures(char **argv, t_data *data)
             check_path((s += skip_space(s)), data);
             count++;
         }
+		free(s);
     }
 }
 
 void check_path(char *s, t_data *data)
 {
-    if (!ft_memcmp(s, "NO ", 3))
-	{
-		if(!data->north)
-		{
+    if (!ft_memcmp(s, "NO ", 3) && !data->north)
 			data->north = get_texture(s + 3);
-			invalid_textures(data->north);
-		}
-		else
-			ft_exit("Error\nDouble textures\n");
-	}
-	else if (!ft_memcmp(s, "SO ", 3))
-	{
-		if(!data->south)
-		{
+	else if (!ft_memcmp(s, "SO ", 3) && !data->south)
 			data->south = get_texture(s + 3);
-			invalid_textures(data->south);
-		}
-		else
-			ft_exit("Error\nDouble textures\n");
-	}
-	else if (!ft_memcmp(s, "EA ", 3))
-	{
-		if(!data->east)
-		{
+	else if (!ft_memcmp(s, "EA ", 3)&& !data->east)
 			data->east = get_texture(s + 3);
-			invalid_textures(data->east);
-		}
-		else
-			ft_exit("Error\nDouble textures\n");
-	}
-	else if (!ft_memcmp(s, "WE ", 3))
-	{
-		if(!data->west)
-		{
+	else if (!ft_memcmp(s, "WE ", 3) && !data->west)
 			data->west = get_texture(s + 3);
-			invalid_textures(data->west);
-		}
-		else
-			ft_exit("Error\nDouble textures\n");
-	}
 	else if (!ft_memcmp(s, "F ", 2))
 		data->floor = hexa_colors(ft_strdup((s + (skip_space(s) + 2))));
 	else if (!ft_memcmp(s, "C ", 2))

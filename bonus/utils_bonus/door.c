@@ -6,23 +6,24 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 14:25:03 by mabenchi          #+#    #+#             */
-/*   Updated: 2022/08/16 12:23:12 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/20 15:04:20 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d_bonus.h"
+
+void if_condi(t_data *data);
 
 void	check_doors(t_data *data)
 {
 	int	i;
 	int	j;
 
-	i = 0;
-	j = 0;
-	while (data->map[i])
+	i = -1;
+	while (++i && data->map[i])
 	{
-		j = 0;
-		while (data->map[i][j])
+		j = -1;
+		while (++j && data->map[i][j])
 		{
 			if (data->map[i][j] == 'D')
 			{
@@ -35,9 +36,7 @@ void	check_doors(t_data *data)
 						ft_exit("ERROR\nA DOOR SHOULD BE BETWEEN WALLS\n");
 				}
 			}
-			j++;
 		}
-		i++;
 	}
 }
 
@@ -48,33 +47,16 @@ void	open_door(t_data *data)
 	{
 		data->map[(int)(data->player_y / 50) - 1][(int)(data->player_x / 50)] = '9';
 		data->opened_door = 1;
-		rendering_3dbonus_map(data);
-		mini_map(data);
 	}
 	else if (data->map[(int)(data->player_y / 50) + 1][(int)(data->player_x / 50)] == 'D'
 		&& data->player_a > 0 && data->player_a < 180)
 	{
 		data->map[(int)(data->player_y / 50) + 1][(int)(data->player_x / 50)] = '9';
 		data->opened_door = 2;
-		rendering_3dbonus_map(data);
-		mini_map(data);
 	}
-	else if (data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) - 1] == 'D'
-		&& (data->player_a > 90 && data->player_a < 270))
-	{
-		data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) - 1] = '9';
-		data->opened_door = 3;
-		rendering_3dbonus_map(data);
-		mini_map(data);
-	}
-	else if (data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) + 1] == 'D'
-		&& (data->player_a > 270 || data->player_a < 90))
-	{
-		data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) + 1] = '9';
-		data->opened_door = 4;
-		rendering_3dbonus_map(data);
-		mini_map(data);
-	}
+	if_condi(data);
+	rendering_3dbonus_map(data);
+	mini_map(data);
 }
 
 void	close_door(t_data *data)
@@ -96,5 +78,21 @@ void	close_door(t_data *data)
 			j++;
 		}
 		i++;
+	}
+}
+
+void if_condi(t_data *data)
+{
+	if (data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) - 1] == 'D'
+		&& (data->player_a > 90 && data->player_a < 270))
+	{
+		data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) - 1] = '9';
+		data->opened_door = 3;
+	}
+	else if (data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) + 1] == 'D'
+		&& (data->player_a > 270 || data->player_a < 90))
+	{
+		data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) + 1] = '9';
+		data->opened_door = 4;
 	}
 }

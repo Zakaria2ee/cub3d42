@@ -6,7 +6,7 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 09:49:54 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/16 12:29:48 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/20 15:39:42 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ void	rendering_bonus(t_data *data)
 
 void	init(t_data *data)
 {
-	int	i;
-
-	i = -1;
 	data->screen.mlx_img = mlx_new_image(data->mlx, RSX, RSY);
 	data->screen.addr = mlx_get_data_addr(data->screen.mlx_img,
 			&data->screen.bpp, &data->screen.line_len, &data->screen.endian);
@@ -47,6 +44,14 @@ void	init(t_data *data)
 			&data->e.line_len, &data->e.endian);
 	data->we.mlx_img = mlx_xpm_file_to_image(data->mlx, data->west,
 			&data->we.w, &data->we.h);
+	init1(data);
+}
+
+void init1(t_data *data)
+{
+	int i;
+
+	i = -1;
 	data->we.addr = mlx_get_data_addr(data->we.mlx_img, &data->we.bpp,
 			&data->we.line_len, &data->we.endian);
 	data->s.mlx_img = mlx_xpm_file_to_image(data->mlx, data->south,
