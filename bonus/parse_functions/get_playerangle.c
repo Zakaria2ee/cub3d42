@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_playerangle.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 14:41:22 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/20 14:52:34 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/21 12:11:23 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	get_player_a(t_data *data)
 {
 	int	i;
 	int	j;
-	int counter;
+	int	counter;
 
 	i = 0;
 	counter = 0;
@@ -25,17 +25,17 @@ void	get_player_a(t_data *data)
 		j = 0;
 		while (data->map[i][j])
 		{
-			check_p(data, i,j, &counter);
-			check_p2(data, i,j, &counter);
+			check_p(data, i, j, &counter);
+			check_p2(data, i, j, &counter);
 			j++;
 		}
 		i++;
 	}
-	if(counter != 1)
+	if (counter != 1)
 		ft_exit("Error\nyou need one player position to start\n");
 }
 
-void check_p(t_data *data, int i, int j, int *counter)
+void	check_p(t_data *data, int i, int j, int *counter)
 {
 	if (data->map[i][j] == 'N')
 	{
@@ -49,7 +49,7 @@ void check_p(t_data *data, int i, int j, int *counter)
 	}
 }
 
-void check_p2(t_data *data, int i, int j, int *counter)
+void	check_p2(t_data *data, int i, int j, int *counter)
 {
 	if (data->map[i][j] == 'E')
 	{

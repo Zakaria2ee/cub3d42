@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 09:49:54 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/20 15:39:42 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/21 12:16:25 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	rendering_bonus(t_data *data)
 	rendering_3dbonus_map(data);
 	mini_map(data);
 	mlx_hook(data->mlx_win, 17, 1, ft_close, 0);
-	mlx_hook(data->mlx_win, 2, 1L<<0, add_key_press, data);
-	mlx_hook(data->mlx_win, 3, 1L<<1, add_key_release, data);
+	mlx_hook(data->mlx_win, 2, 1L << 0, add_key_press, data);
+	mlx_hook(data->mlx_win, 3, 1L << 1, add_key_release, data);
 	mlx_loop_hook(data->mlx, render_map, data);
 	mlx_loop(data->mlx);
 }
@@ -34,8 +34,8 @@ void	init(t_data *data)
 	data->minimap.mlx_img = mlx_new_image(data->mlx, 200, 200);
 	data->minimap.addr = mlx_get_data_addr(data->minimap.mlx_img,
 			&data->minimap.bpp, &data->minimap.line_len, &data->minimap.endian);
-	data->door.mlx_img = mlx_xpm_file_to_image(data->mlx, "../textures/door.xpm",
-			&data->door.w, &data->door.h);
+	data->door.mlx_img = mlx_xpm_file_to_image(data->mlx,
+			"../textures/door.xpm", &data->door.w, &data->door.h);
 	data->door.addr = mlx_get_data_addr(data->door.mlx_img, &data->door.bpp,
 			&data->door.line_len, &data->door.endian);
 	data->e.mlx_img = mlx_xpm_file_to_image(data->mlx, data->east,
@@ -47,9 +47,9 @@ void	init(t_data *data)
 	init1(data);
 }
 
-void init1(t_data *data)
+void	init1(t_data *data)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	data->we.addr = mlx_get_data_addr(data->we.mlx_img, &data->we.bpp,
@@ -66,8 +66,8 @@ void init1(t_data *data)
 	data->black.addr = mlx_get_data_addr(data->black.mlx_img, &data->black.bpp,
 			&data->black.line_len, &data->black.endian);
 	put_black_pixel(data);
-	data->player_dx = cos(data->player_a * PI/180) * PX;
-	data->player_dy = sin(data->player_a * PI/180) * PX;
+	data->player_dx = cos(data->player_a * PI / 180) * PX;
+	data->player_dy = sin(data->player_a * PI / 180) * PX;
 	while (++i < 8)
 		data->keys[i] = 0;
 }

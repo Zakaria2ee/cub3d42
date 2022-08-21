@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_left.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 10:35:01 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/16 13:30:16 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/21 14:05:25 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	move_left(t_data *data)
 		angle -= 360;
 	if (angle < 0)
 		angle += 360;
-	if (walls_checker3(x,y, PX * sin(angle * PI / 180),
+	if (walls_checker3(x, y, PX * sin(angle * PI / 180),
 			PX * cos(angle * PI / 180), data))
 		return ;
 	data->player_x += PX * cos(angle * PI / 180);

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   door.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 14:25:03 by mabenchi          #+#    #+#             */
-/*   Updated: 2022/08/20 15:04:20 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/21 13:49:54 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d_bonus.h"
 
-void if_condi(t_data *data);
+void	if_condi(t_data *data);
 
 void	check_doors(t_data *data)
 {
@@ -42,16 +42,20 @@ void	check_doors(t_data *data)
 
 void	open_door(t_data *data)
 {
-	if (data->map[(int)(data->player_y / 50) - 1][(int)(data->player_x / 50)] == 'D'
+	if (data->map[(int)(data->player_y / 50) - 1]
+		[(int)(data->player_x / 50)] == 'D'
 		&& data->player_a > 180 && data->player_a < 360)
 	{
-		data->map[(int)(data->player_y / 50) - 1][(int)(data->player_x / 50)] = '9';
+		data->map[(int)(data->player_y / 50) - 1]
+		[(int)(data->player_x / 50)] = '9';
 		data->opened_door = 1;
 	}
-	else if (data->map[(int)(data->player_y / 50) + 1][(int)(data->player_x / 50)] == 'D'
+	else if (data->map[(int)(data->player_y / 50) + 1]
+		[(int)(data->player_x / 50)] == 'D'
 		&& data->player_a > 0 && data->player_a < 180)
 	{
-		data->map[(int)(data->player_y / 50) + 1][(int)(data->player_x / 50)] = '9';
+		data->map[(int)(data->player_y / 50) + 1]
+		[(int)(data->player_x / 50)] = '9';
 		data->opened_door = 2;
 	}
 	if_condi(data);
@@ -81,18 +85,30 @@ void	close_door(t_data *data)
 	}
 }
 
-void if_condi(t_data *data)
+void	if_condi(t_data *data)
 {
-	if (data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) - 1] == 'D'
+	if (data->map[(int)(data->player_y / 50)]
+		[(int)(data->player_x / 50) - 1] == 'D'
 		&& (data->player_a > 90 && data->player_a < 270))
 	{
-		data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) - 1] = '9';
+		data->map[(int)(data->player_y / 50)]
+		[(int)(data->player_x / 50) - 1] = '9';
 		data->opened_door = 3;
 	}
-	else if (data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) + 1] == 'D'
+	else if (data->map[(int)(data->player_y / 50)]
+		[(int)(data->player_x / 50) + 1] == 'D'
 		&& (data->player_a > 270 || data->player_a < 90))
 	{
-		data->map[(int)(data->player_y / 50)][(int)(data->player_x / 50) + 1] = '9';
+		data->map[(int)(data->player_y / 50)]
+		[(int)(data->player_x / 50) + 1] = '9';
 		data->opened_door = 4;
 	}
+}
+
+int	in_circle(int x, int y, int w)
+{
+	if (sqrt(((x - (w / 2)) * (x - (w / 2)))
+			+ ((y - (w / 2)) * (y - (w / 2)))) < w / 2)
+		return (1);
+	return (0);
 }

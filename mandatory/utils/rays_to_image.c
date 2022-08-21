@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rays_to_image.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:48:59 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/20 11:47:45 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/21 13:56:03 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	rays_to_image(t_data *data, double *rays)
 		put_pixles(img, current_x, rays, data);
 		current_x++;
 	}
-	mlx_put_image_to_window(data->mlx, data->mlx_win, img.mlx_img, 0,0);
+	mlx_put_image_to_window(data->mlx, data->mlx_win, img.mlx_img, 0, 0);
 }
 
 static int	get_color(t_data *data, int *dirray, int y, int d)
@@ -56,7 +56,7 @@ static int	get_color(t_data *data, int *dirray, int y, int d)
 	return (pixel + ((unsigned char)d << 24));
 }
 
-void	put_pixles(t_img img, int current_x, double *rays,  t_data *data)
+void	put_pixles(t_img img, int current_x, double *rays, t_data *data)
 {
 	int	i;
 	int	to_draw;
@@ -83,7 +83,7 @@ void	put_pixles(t_img img, int current_x, double *rays,  t_data *data)
 	render_sky(data, img, current_x);
 }
 
-void render_sky(t_data *data, t_img img, int current_x)
+void	render_sky(t_data *data, t_img img, int current_x)
 {
 	while (data->current_y >= 0)
 	{
@@ -92,7 +92,7 @@ void render_sky(t_data *data, t_img img, int current_x)
 	}
 }
 
-void ini(int *i,  double *rays, int current_x)
+void	ini(int *i, double *rays, int current_x)
 {
 	*i = (RSY * 50 / rays[current_x]);
 	if (*i > RSY)

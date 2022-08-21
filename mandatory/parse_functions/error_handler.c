@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_handler.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 11:45:09 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/20 10:57:33 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/21 13:57:58 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	new_line_errors(char *str)
 
 void	empty_errors(t_data *data)
 {
-	int j;
+	int	j;
 	int	i;
 	int	counter;
 
@@ -75,7 +75,7 @@ void	check_space(int i, int j, char **map)
 		ft_exit("ERROR\n");
 }
 
-void check_error(int i, t_data *data, int *counter, int *j)
+void	check_error(int i, t_data *data, int *counter, int *j)
 {
 	while (data->map[i][*j])
 	{
@@ -90,13 +90,12 @@ void check_error(int i, t_data *data, int *counter, int *j)
 			data->player_y = (i * 50) + 25;
 			data->player_x = (*j * 50) + 25;
 		}
-		if(!delimiters(data->map[i][*j]) && data->map[i][*j] != ' ')
+		if (!delimiters(data->map[i][*j]) && data->map[i][*j] != ' ')
 			ft_exit("Error\n");
-		if(data->map[i][*j] == 'N' || data->map[i][*j] == 'S' || data->map[i][*j] == 'E' 
+		if (data->map[i][*j] == 'N'
+			|| data->map[i][*j] == 'S' || data->map[i][*j] == 'E'
 			|| data->map[i][*j] == 'W')
-		{
 			check_space(i, *j, data->map);
-		}
 		(*j)++;
 	}
 }

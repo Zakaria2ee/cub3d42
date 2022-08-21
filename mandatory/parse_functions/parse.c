@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 11:42:16 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/20 10:42:56 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/21 13:53:17 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	parsing(char **argv, t_data *data)
 	return (0);
 }
 
-void init1(t_data *data)
+void	init1(t_data *data)
 {
 	data->north = 0;
 	data->west = 0;

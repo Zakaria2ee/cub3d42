@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 13:01:41 by mabenchi          #+#    #+#             */
-/*   Updated: 2022/08/20 15:39:53 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/21 15:32:50 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,9 @@ typedef struct data_t
 	int		opened_door;
 	int		dirray[RSX][3];
 	int		keys[8];
-	int 	current_y;
-	int 	current_x;
-	int 	t_color;
+	int		current_y;
+	int		current_x;
+	int		t_color;
 }	t_data;
 
 //-------parse--------------//
@@ -103,13 +103,13 @@ int		parsing_b(char **argv, t_data *data);
 int		ft_close(void);
 int		skip_space(char *s);
 int		delimiters(char c);
-void 	check_invalid_textures(char *filename);
-void 	check_p2(t_data *data, int i, int j, int *counter);
-void 	check_p(t_data *data, int i, int j, int *counter);
-char 	*get_texture(char *s);
-void 	invalid_textures(char *filename);
-void 	init2(t_data *data);
-int 	res_len(int *str);
+void	check_invalid_textures(char *filename);
+void	check_p2(t_data *data, int i, int j, int *counter);
+void	check_p(t_data *data, int i, int j, int *counter);
+char	*get_texture(char *s);
+void	invalid_textures(char *filename);
+void	init2(t_data *data);
+int		res_len(int *str);
 
 //-------errors---------------------------//
 void	check_path(char *s, t_data *data);
@@ -121,7 +121,7 @@ void	empty_errors(t_data *data);
 void	check_space(int i, int j, char **map);
 void	check_doors(t_data *data);
 int		walls_checker3_b(double x, double y, float dy, float dx, t_data *data);
-void 	check_error(int i, t_data *data, int *counter, int *j);
+void	check_error(int i, t_data *data, int *counter, int *j);
 
 //-----------moves-----------------//
 void	move_right(t_data *data);
@@ -162,10 +162,11 @@ void	put_black_background(t_data *data);
 void	put_black_pixel(t_data *data);
 int		hexa_colors(char *str);
 void	ft_put_pxl(t_img *img, int x, int y, int color);
-void	put_pixles(t_img img, int current_x, double *rays,  t_data *data);
+void	put_pixles(t_img img, int current_x, double *rays, t_data *data);
 int		get_color_b(t_data *data, int *dirray, int y, int d);
 void	put_pixles_b(t_img img, double *rays, t_data *data);
-void 	draw_sky(t_data *data, t_img img);
-void 	init1(t_data *data);
+void	draw_sky(t_data *data, t_img img);
+void	init1(t_data *data);
+int		in_circle(int x, int y, int w);
 //--------------------------------------------------------//
 #endif

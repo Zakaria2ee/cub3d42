@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 09:49:54 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/18 10:14:20 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/21 13:54:57 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ void	init(t_data *data)
 	data->black.addr = mlx_get_data_addr(data->black.mlx_img, &data->black.bpp,
 			&data->black.line_len, &data->black.endian);
 	put_black_pixel(data);
-	data->player_dx = cos(data->player_a * PI/180) * PX;
-	data->player_dy = sin(data->player_a * PI/180) * PX;
+	data->player_dx = cos(data->player_a * PI / 180) * PX;
+	data->player_dy = sin(data->player_a * PI / 180) * PX;
 }

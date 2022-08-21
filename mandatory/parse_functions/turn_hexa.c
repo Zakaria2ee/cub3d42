@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   turn_hexa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 14:29:41 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/20 11:21:23 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/21 13:56:23 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int	hexa_colors(char *str)
 			i++;
 		s = ft_substr(str, start, (i - start));
 		start = i + 1;
-		res[j] = ft_atoi(s); 
-		if(!res[j++])
+		res[j] = ft_atoi(s);
+		if (!res[j++])
 			ft_exit("Error\nWrong color\n");
 		free(s);
 	}
@@ -39,14 +39,14 @@ int	hexa_colors(char *str)
 	return ((res[0] << 16) + (res[1] << 8) + res[2]);
 }
 
-int res_len(int *str)
+int	res_len(int *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 		i++;
-	if(i > 3)
+	if (i > 3)
 		ft_exit("Error\nWrong Color\n");
 	return (i);
 }

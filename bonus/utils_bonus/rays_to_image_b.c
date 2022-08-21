@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   rays_to_image_b.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:48:59 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/20 15:35:30 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/21 11:57:44 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d_bonus.h"
 
-void draw_floor(t_data *data, int *v, t_img img, int *i);
+void	draw_floor(t_data *data, int *v, t_img img, int *i);
+
 void	rays_to_image_b(t_data *data, double *rays)
 {
 	int	current_y;
@@ -34,7 +35,7 @@ double	distance(int x, int y, int x1, int y1)
 			+ ((y - y1) * (y - y1))));
 }
 
-void	put_pixles_b(t_img img, double *rays,  t_data *data)
+void	put_pixles_b(t_img img, double *rays, t_data *data)
 {
 	int	i;
 	int	v;
@@ -61,7 +62,7 @@ void	put_pixles_b(t_img img, double *rays,  t_data *data)
 	draw_sky(data, img);
 }
 
-void draw_sky(t_data *data, t_img img)
+void	draw_sky(t_data *data, t_img img)
 {
 	while (data->current_y >= 0)
 	{
@@ -75,7 +76,7 @@ void draw_sky(t_data *data, t_img img)
 	}
 }
 
-void draw_floor(t_data *data, int *v, t_img img, int *i)
+void	draw_floor(t_data *data, int *v, t_img img, int *i)
 {
 	while (*i > 0)
 	{
@@ -84,7 +85,8 @@ void draw_floor(t_data *data, int *v, t_img img, int *i)
 			*v = 1;
 		if (!*v)
 			ft_put_pxl(&img, data->current_x, data->current_y, data->floor
-				+ ((unsigned char)((distance(data->current_x, data->current_y, RSX / 2, RSY)
+				+ ((unsigned char)((distance(data->current_x,
+								data->current_y, RSX / 2, RSY)
 							- data->current_y - 150) / 8) << 24));
 		else
 			ft_put_pxl(&img, data->current_x, data->current_y, 0x000000);

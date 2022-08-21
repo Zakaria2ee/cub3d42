@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 11:39:03 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/20 11:47:53 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/21 15:31:13 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,8 @@ typedef struct data_t
 	t_img	door;
 	int		dirray[RSX][3];
 	int		keys[8];
-	int 	current_y;
-	int  	tcolor;
+	int		current_y;
+	int		tcolor;
 }	t_data;
 //------------parse----------------//
 void	init(t_data *data);
@@ -95,13 +95,13 @@ void	get_textures(char **argv, t_data *data);
 void	get_map(char **argv, t_data *data);
 int		parsing(char **argv, t_data *data);
 char	*get_next_line(int fd);
-void 	init1(t_data *data);
-char 	*get_texture(char *s);
-void 	check_invalid_textures(char *filename);
-void 	check_p(t_data *data, int i, int j, int *counter);
-void 	check_p2(t_data *data, int i, int j, int *counter);
-void 	check_error(int i, t_data *data, int *counter, int *j);
-int 	res_len(int *str);
+void	init1(t_data *data);
+char	*get_texture(char *s);
+void	check_invalid_textures(char *filename);
+void	check_p(t_data *data, int i, int j, int *counter);
+void	check_p2(t_data *data, int i, int j, int *counter);
+void	check_error(int i, t_data *data, int *counter, int *j);
+int		res_len(int *str);
 //----------------------------------//
 //-----------utils---------------//
 int		ft_close(void);
@@ -121,8 +121,8 @@ void	put_black_pixel(t_data *data);
 int		hexa_colors(char *str);
 void	ft_put_pxl(t_img *img, int x, int y, int color);
 void	put_pixles(t_img img, int current_x, double *rays, t_data *data);
-void 	render_sky(t_data *data, t_img img, int current_x);
-void 	ini(int *i,  double *rays, int current_x);
+void	render_sky(t_data *data, t_img img, int current_x);
+void	ini(int *i, double *rays, int current_x);
 
 //--------------------------------------------------//
 //----------------errors_check---------------//

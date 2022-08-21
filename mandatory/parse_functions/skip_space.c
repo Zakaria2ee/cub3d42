@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   skip_space.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 16:24:36 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/19 16:25:27 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/21 13:56:38 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-int skip_space(char *s)
+int	skip_space(char *s)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while(s[i] == ' ')
-        i++;
-    return (i);
+	i = 0;
+	while (s[i] == ' ')
+		i++;
+	return (i);
 }
