@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_back.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 17:03:19 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/16 13:30:18 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/22 13:45:15 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 void	move_back(t_data *data)
 {
-	if (!walls_checker2(data->player_x, data->player_y,
-			PX * sin(data->player_a * PI / 180),
-			PX * cos(data->player_a * PI / 180), data))
+	if (!walls_checker2(data->player_x, data->player_y, data))
 		return ;
 	data->player_x -= round(PX * cos(data->player_a * PI / 180));
 	data->player_y -= round(PX * sin(data->player_a * PI / 180));

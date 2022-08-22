@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 11:58:15 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/21 14:05:19 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/22 13:39:51 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ void	move_right(t_data *data)
 		angle -= 360;
 	else if (angle < 0)
 		angle += 360;
-	if (walls_checker3(data->player_x, data->player_y,
-			PX * sin(angle * PI / 180), PX * cos(angle * PI / 180), data))
+	if (walls_checker310(data->player_x, data->player_y, angle, data))
 		return ;
 	data->player_x += PX * cos(angle * PI / 180);
 	data->player_y += PX * sin(angle * PI / 180);

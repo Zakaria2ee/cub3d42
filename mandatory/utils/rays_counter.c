@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:44:12 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/21 15:31:36 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/22 11:26:29 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,22 +54,19 @@ int	reach_wall(t_data *data, double angle, double *x, double *y)
 
 	*x = data->player_x;
 	*y = data->player_y;
-	while (!walls_checker3(*x, *y, 1 * sin(angle * PI / 180),
-			1 * cos(angle * PI / 180), data))
+	while (!walls_checker31(*x, *y, angle, data))
 	{
 		*x += 1 * cos(angle * PI / 180);
 		*y += 1 * sin(angle * PI / 180);
 	}
 	*x -= 1 * cos(angle * PI / 180);
 	*y -= 1 * sin(angle * PI / 180);
-	d_ray = walls_checker3(*x, *y, 0.1 * sin(angle * PI / 180),
-			0.1 * cos(angle * PI / 180), data);
+	d_ray = walls_checker301(*x, *y, angle, data);
 	while (!d_ray)
 	{
 		*x += 0.1 * cos(angle * PI / 180);
 		*y += 0.1 * sin(angle * PI / 180);
-		d_ray = walls_checker3(*x, *y, 0.1 * sin(angle * PI / 180),
-				0.1 * cos(angle * PI / 180), data);
+		d_ray = walls_checker301(*x, *y, angle, data);
 	}
 	return (d_ray);
 }

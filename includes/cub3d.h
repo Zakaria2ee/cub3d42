@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 11:39:03 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/21 15:31:13 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/22 13:45:08 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,8 +133,12 @@ void	new_line_errors(char *str);
 void	check_space(int i, int j, char **map);
 void	empty_errors(t_data *data);
 int		walls_checker(int x, int y, t_data *data);
-int		walls_checker2(int x, int y, float dy, float dx, t_data *data);
-int		walls_checker3(double x, double y, float dy, float dx, t_data *data);
+int		walls_checker2(int x, int y, t_data *data);
+//int		walls_checker3(int x, int y, float dy, float dx, t_data *data);
+int		walls_checker3(double x, double y, int px, t_data *data);
+int		walls_checker31(double x, double y, double angle, t_data *data);
+int		walls_checker301(double x, double y, double angle, t_data *data);
+int		walls_checker310(double x, double y, double angle, t_data *data);
 //-----------------------------------------------//
 
 //--------moves-----------//
