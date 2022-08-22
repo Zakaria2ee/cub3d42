@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 13:01:41 by mabenchi          #+#    #+#             */
-/*   Updated: 2022/08/21 15:32:50 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/22 15:34:51 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,10 @@ void	check_extention(char *path);
 void	empty_errors(t_data *data);
 void	check_space(int i, int j, char **map);
 void	check_doors(t_data *data);
-int		walls_checker3_b(double x, double y, float dy, float dx, t_data *data);
+int		walls_checker3_b(double x, double y, double angle, t_data *data);
+int		walls_checker320_b(double x, double y, t_data *data);
+int		walls_checker31_b(double x, double y, double angle, t_data *data);
+int		walls_checker301_b(double x, double y, double angle, t_data *data);
 void	check_error(int i, t_data *data, int *counter, int *j);
 
 //-----------moves-----------------//

@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 16:01:42 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/21 12:07:30 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/22 15:01:32 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,11 @@ void	if_cond(t_data *data);
 
 void	move_stright_b(t_data *data)
 {
-	if (walls_checker3_b(data->player_x, data->player_y,
-			20 * sin(data->player_a * PI / 180),
-			20 * cos(data->player_a * PI / 180), data))
+	if (walls_checker320_b(data->player_x, data->player_y, data))
 	{
 		if_cond(data);
 	}
-	else if (!walls_checker3_b(data->player_x, data->player_y,
-			20 * sin(data->player_a * PI / 180),
-			20 * cos(data->player_a * PI / 180), data))
+	else if (!walls_checker320_b(data->player_x, data->player_y, data))
 	{
 		data->player_x += round(PX * cos(data->player_a * PI / 180));
 		data->player_y += round(PX * sin(data->player_a * PI / 180));
