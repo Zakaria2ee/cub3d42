@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 13:01:41 by mabenchi          #+#    #+#             */
-/*   Updated: 2022/08/22 15:34:51 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/22 16:56:29 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,7 +154,7 @@ void	mini_map(t_data *data);
 void	rays_counter_b(t_data *data, double *rays);
 void	rays_to_image_b(t_data *data, double *rays);
 void	open_door(t_data *data);
-int		walls_checker2_b(int x, int y, float dy, float dx, t_data *data);
+int		walls_checker2_b(int x, int y, t_data *data);
 int		add_key_release(int keycode, t_data *data);
 int		add_key_press(int keycode, t_data *data);
 int		render_map(t_data *data);
