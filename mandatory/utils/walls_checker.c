@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 09:06:20 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/22 13:44:46 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/22 14:12:53 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	walls_checker2(int x, int y, t_data *data)
 	dy = PX * sin(data->player_a * PI / 180);
 	if (data->map[(int)(y - dy) / 50][(int)(x - dx) / 50] == '1')
 		return (0);
-	if (data->map[(int)(y - dy) / 50][(int)(x / 50)] == '1' 
+	if (data->map[(int)(y - dy) / 50][(int)(x / 50)] == '1'
 	&& data->map[(int)(y / 50)][(int)(x - dx) / 50] == '1')
 		return (0);
 	return (1);
@@ -77,22 +77,6 @@ int	walls_checker301(double x, double y, double angle, t_data *data)
 
 	dy = 0.1 * cos(angle * PI / 180);
 	dx = 0.1 * sin(angle * PI / 180);
-	if (data->map[(int)(y + dy) / 50][(int)(x / 50)] == '1')
-		return ('y');
-	if (data->map[(int)(y / 50)][(int)(x + dx) / 50] == '1')
-		return ('x');
-	if (data->map[(int)(y + dy) / 50][(int)(x + dx) / 50] == '1')
-		return (1);
-	return (0);
-}
-
-int	walls_checker310(double x, double y, double angle, t_data *data)
-{
-	int	dy;
-	int	dx;
-
-	dy = PX * cos(angle * PI / 180);
-	dx = PX * sin(angle * PI / 180);
 	if (data->map[(int)(y + dy) / 50][(int)(x / 50)] == '1')
 		return ('y');
 	if (data->map[(int)(y / 50)][(int)(x + dx) / 50] == '1')
