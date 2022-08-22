@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 09:06:20 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/22 14:12:53 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/22 14:40:42 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,6 @@ int	walls_checker2(int x, int y, t_data *data)
 
 int	walls_checker3(double x, double y, int px, t_data *data)
 {
-	int	dy;
-	int	dx;
-
-	dy = px * cos(data->player_a);
-	dx = px * sin(data->player_a);
 	if (data->map[(int)(y + dy) / 50][(int)(x / 50)] == '1')
 		return ('y');
 	if (data->map[(int)(y / 50)][(int)(x + dx) / 50] == '1')
@@ -56,8 +51,8 @@ int	walls_checker3(double x, double y, int px, t_data *data)
 
 int	walls_checker31(double x, double y, double angle, t_data *data)
 {
-	int	dy;
-	int	dx;
+	float	dy;
+	float	dx;
 
 	dy = 1 * cos(angle * PI / 180);
 	dx = 1 * sin(angle * PI / 180);
@@ -72,8 +67,8 @@ int	walls_checker31(double x, double y, double angle, t_data *data)
 
 int	walls_checker301(double x, double y, double angle, t_data *data)
 {
-	int	dy;
-	int	dx;
+	float	dy;
+	float	dx;
 
 	dy = 0.1 * cos(angle * PI / 180);
 	dx = 0.1 * sin(angle * PI / 180);
