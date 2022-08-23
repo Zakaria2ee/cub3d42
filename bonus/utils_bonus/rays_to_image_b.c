@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:48:59 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/21 11:57:44 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/23 12:27:43 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,25 +71,17 @@ void	draw_sky(t_data *data, t_img img)
 		else
 			data->t_color = data->current_y ;
 		ft_put_pxl(&img, data->current_x, data->current_y,
-			data->sky + ((unsigned char)data->t_color << 24));
+			data->sky);
 		data->current_y--;
 	}
 }
 
 void	draw_floor(t_data *data, int *v, t_img img, int *i)
 {
+	(void)v;
 	while (*i > 0)
 	{
-		if (((distance(data->current_x, data->current_y,
-						RSX / 2, RSY) - data->current_y - 100) / 8) > 0)
-			*v = 1;
-		if (!*v)
-			ft_put_pxl(&img, data->current_x, data->current_y, data->floor
-				+ ((unsigned char)((distance(data->current_x,
-								data->current_y, RSX / 2, RSY)
-							- data->current_y - 150) / 8) << 24));
-		else
-			ft_put_pxl(&img, data->current_x, data->current_y, 0x000000);
+		ft_put_pxl(&img, data->current_x, data->current_y, data->floor);
 		data->current_y--;
 		(*i)--;
 	}

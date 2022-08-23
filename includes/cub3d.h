@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 11:39:03 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/22 13:45:08 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/23 12:42:52 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ int		hexa_colors(char *str);
 void	ft_put_pxl(t_img *img, int x, int y, int color);
 void	put_pixles(t_img img, int current_x, double *rays, t_data *data);
 void	render_sky(t_data *data, t_img img, int current_x);
-void	ini(int *i, double *rays, int current_x);
+int		ini(int *i, double *rays, int current_x);
 
 //--------------------------------------------------//
 //----------------errors_check---------------//

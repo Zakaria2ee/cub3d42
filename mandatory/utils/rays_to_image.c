@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:48:59 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/22 11:22:13 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/23 12:46:13 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,33 +35,43 @@ static int	get_color(t_data *data, int *dirray, int y, int d)
 {
 	int	pixel;
 
-	if (d > 200)
-		d = 200;
+	if (d > 180)
+		d = 180;
 	if (dirray[0] == 's')
-		pixel = (*(int *)(data->s.addr
-					+ (y * data->s.line_len
+		pixel = (*(int *)(data->s.addr + (y * data->s.line_len
 						+ dirray[1] * (data->s.bpp / 8))));
 	else if (dirray[0] == 'w')
-		pixel = (*(int *)(data->we.addr
-					+ (y * data->we.line_len
+		pixel = (*(int *)(data->we.addr + (y * data->we.line_len
 						+ dirray[1] * (data->we.bpp / 8))));
 	else if (dirray[0] == 'n')
-		pixel = (*(int *)(data->n.addr
-					+ (y * data->n.line_len
+		pixel = (*(int *)(data->n.addr + (y * data->n.line_len
 						+ dirray[1] * (data->n.bpp / 8))));
 	else
-		pixel = (*(int *)(data->e.addr
-					+ (y * data->e.line_len
+		pixel = (*(int *)(data->e.addr + (y * data->e.line_len
 						+ dirray[1] * (data->e.bpp / 8))));
-	return (pixel + ((unsigned char)d << 24));
+	return (pixel);
+}
+
+static int	get_tex_size(t_data *data, int *dirray)
+{
+	if (dirray[0] == 's')
+		return (data->s.h);
+	else if (dirray[0] == 'w')
+		return (data->we.h);
+	else if (dirray[0] == 'n')
+		return (data->n.h);
+	else
+		return (data->e.h);
 }
 
 void	put_pixles(t_img img, int current_x, double *rays, t_data *data)
 {
 	int	i;
 	int	to_draw;
+	int	tex_size;
 
 	data->current_y = RSY - 1;
+	tex_size = get_tex_size(data, data->dirray[current_x]);
 	i = (RSY - (RSY * 50 / rays[current_x])) / 2;
 	while (i > 0)
 	{
@@ -69,8 +79,7 @@ void	put_pixles(t_img img, int current_x, double *rays, t_data *data)
 		data->current_y--;
 		i--;
 	}
-	ini(&i, rays, current_x);
-	to_draw = i;
+	to_draw = ini(&i, rays, current_x);
 	while (i >= 0 && data->current_y > 0)
 	{
 		data->tcolor = get_color(data, data->dirray[current_x],
@@ -90,11 +99,4 @@ void	render_sky(t_data *data, t_img img, int current_x)
 		ft_put_pxl(&img, current_x, data->current_y, data->sky);
 		data->current_y--;
 	}
-}
-
-void	ini(int *i, double *rays, int current_x)
-{
-	*i = (RSY * 50 / rays[current_x]);
-	if (*i > RSY)
-		*i -= (*i - RSY) / 2;
 }

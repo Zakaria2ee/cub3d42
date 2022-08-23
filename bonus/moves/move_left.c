@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 10:35:01 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/22 14:58:59 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/23 12:39:05 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	move_left(t_data *data)
 		angle += 360;
 	if (walls_checker3_b(x, y, angle, data))
 		return ;
-	data->player_x += PX * cos(angle * PI / 180);
-	data->player_y += PX * sin(angle * PI / 180);
+	data->player_x += 10 * cos(angle * PI / 180);
+	data->player_y += 10 * sin(angle * PI / 180);
 	rendering_3dbonus_map(data);
 	mini_map(data);
 }

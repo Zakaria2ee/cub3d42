@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 13:01:41 by mabenchi          #+#    #+#             */
-/*   Updated: 2022/08/22 16:56:29 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/23 12:28:23 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <math.h>
 # include <pthread.h>
 # define PI 3.14159265358979323846
-# define PX 10
+# define PX 20
 # define RA 10
 # define RSX 1200
 # define RSY 800

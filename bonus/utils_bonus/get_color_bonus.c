@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 15:21:20 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/21 12:17:20 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/23 12:25:40 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ int	get_color_b(t_data *data, int *dirray, int y, int d)
 	else
 		pixel = (*(int *)(data->e.addr + (y * data->e.line_len
 						+ dirray[1] * (data->e.bpp / 8))));
-	return (pixel + ((unsigned char)d << 24));
+	return (pixel);
 }

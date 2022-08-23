@@ -29,7 +29,7 @@ LIBFT = ../libft/ft_strjoin.c ../libft/ft_strlen.c ../libft/ft_strcmp.c \
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(LIBFT) $(UTLS) $(MOVES) $(PARSE_FUNC)
 	@$(CC) $(FLGS) $(MLX) cub3d.c $(LIBFT) $(UTLS) $(MOVES) $(PARSE_FUNC)  -o $(NAME)
 	@echo '\033[0;32m'"The programm compiled successefully"
 
