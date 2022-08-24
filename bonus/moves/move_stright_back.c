@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 16:01:42 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/23 12:36:12 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/24 10:35:56 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	wall_collising(t_data *data)
 			(int)round(20 * cos(data->player_a * PI / 180))) / 50] != 'D')
 	{
 		if (data->player_a != 270 && data->player_a != 90)
-			data->player_x += round(20 * cos(data->player_a * PI / 180));
+			data->player_x += round(10 * cos(data->player_a * PI / 180));
 	}
 	if (data->map[(data->player_y +(int)round(
 					20 * sin(data->player_a * PI / 180))) / 50]
@@ -55,7 +55,7 @@ void	wall_collising(t_data *data)
 		[data->player_x / 50] != 'D')
 	{
 		if (data->player_a != 0 && data->player_a != 180)
-			data->player_y += round(20 * sin(data->player_a * PI / 180));
+			data->player_y += round(10 * sin(data->player_a * PI / 180));
 	}
 	else
 	{
