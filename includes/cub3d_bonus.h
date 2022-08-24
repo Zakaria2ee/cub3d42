@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 13:01:41 by mabenchi          #+#    #+#             */
-/*   Updated: 2022/08/23 12:28:23 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/24 11:42:01 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ typedef struct data_t
 void	init(t_data *data);
 void	ft_exit(char *str);
 void	get_textures(char **argv, t_data *data);
-void	get_map(char **argv, t_data *data);
+void	get_map(t_data *data);
 char	*get_next_line(int fd);
 void	get_player_a(t_data *data);
 int		parsing_b(char **argv, t_data *data);

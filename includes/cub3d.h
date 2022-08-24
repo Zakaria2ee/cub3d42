@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 11:39:03 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/23 12:42:52 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/24 11:42:38 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ typedef struct data_t
 void	init(t_data *data);
 void	ft_exit(char *str);
 void	get_textures(char **argv, t_data *data);
-void	get_map(char **argv, t_data *data);
+void	get_map(t_data *data);
 int		parsing(char **argv, t_data *data);
 char	*get_next_line(int fd);
 void	init1(t_data *data);

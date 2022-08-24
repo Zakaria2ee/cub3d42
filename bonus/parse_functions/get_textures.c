@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_textures.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 09:01:23 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/21 12:23:12 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/24 11:41:35 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	get_textures(char **argv, t_data *data)
 	while (count < 6)
 	{
 		s = get_next_line(data->fd);
+		if (!s)
+			break ;
 		if (*s != '\n')
 		{
 			check_path((s += skip_space(s)), data);
@@ -31,6 +33,8 @@ void	get_textures(char **argv, t_data *data)
 		}
 		free(s);
 	}
+	if (count < 6)
+		ft_exit("Error\nincompleted elements\n");
 }
 
 void	check_path(char *s, t_data *data)

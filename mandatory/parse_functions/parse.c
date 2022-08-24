@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 11:42:16 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/21 13:53:17 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/24 11:42:29 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	parsing(char **argv, t_data *data)
 	init1(data);
 	check_extention(argv[1]);
 	get_textures(argv, data);
-	get_map(argv, data);
+	get_map(data);
 	error_handler(data);
 	get_player_a(data);
 	return (0);

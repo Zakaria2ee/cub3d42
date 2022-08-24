@@ -1,6 +1,6 @@
 NO ../textures/Brickwall2.xpm
 SO ../textures/Brickwall3.xpm
-WE ./textures/Brickwall4.xpm
+WE ../textures/Brickwall4.xpm
 EA ../textures/Stonewall.xpm
 
 
