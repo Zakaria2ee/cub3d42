@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   walls_checker.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 09:06:20 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/23 12:44:32 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/25 09:38:19 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int	walls_checker2(int x, int y, t_data *data)
 	float	dx;
 	float	dy;
 
-	dx = PX * cos(data->player_a * PI / 180);
-	dy = PX * sin(data->player_a * PI / 180);
+	dx = 20 * cos(data->player_a * PI / 180);
+	dy = 20 * sin(data->player_a * PI / 180);
 	if (data->map[(int)(y - dy) / 50][(int)(x - dx) / 50] == '1')
 		return (0);
 	if (data->map[(int)(y - dy) / 50][(int)(x / 50)] == '1'

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_stright_back.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 16:01:42 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/24 10:35:56 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/25 09:41:51 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	move_stright_b(t_data *data)
 {
 	if (walls_checker320_b(data->player_x, data->player_y, data))
 		wall_collising(data);
-	else if (!walls_checker320_b(data->player_x, data->player_y, data))
+	if (!walls_checker320_b(data->player_x, data->player_y, data))
 	{
 		data->player_x += round(10 * cos(data->player_a * PI / 180));
 		data->player_y += round(10 * sin(data->player_a * PI / 180));

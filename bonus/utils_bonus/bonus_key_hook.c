@@ -6,7 +6,7 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 12:56:38 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/16 12:23:08 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/25 09:43:47 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	render_map(t_data *data)
 {
-	usleep(150 * 200);
+	usleep(200 * 200);
 	if (data->keys[0] == 1)
 		ft_exit("Exit\n");
 	if (data->keys[1] == 1)
