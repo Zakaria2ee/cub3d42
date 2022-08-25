@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:44:12 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/22 11:26:29 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/25 16:12:40 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,18 @@ int	reach_wall(t_data *data, double angle, double *x, double *y)
 	return (d_ray);
 }
 
+static int	get_t_width_dir(t_data *data, double x, double y, int d_ray)
+{
+	if (d_ray == 's')
+		return ((int)round(y * ((double)data->s.w / 50.0)) % data->s.w);
+	else if (d_ray == 'n')
+		return ((int)round(y * ((double)data->n.w / 50.0)) % data->n.w);
+	else if (d_ray == 'e')
+		return ((int)round(x * ((double)data->e.w / 50.0)) % data->e.h);
+	else
+		return ((int)round(x * ((double)data->we.w / 50.0)) % data->we.h);
+}
+
 static double	get_ray(t_data *data, double angle, int i, int r)
 {
 	double	x;
@@ -85,9 +97,6 @@ static double	get_ray(t_data *data, double angle, int i, int r)
 	if (ray < 1)
 		ray = 1;
 	data->dirray[i][0] = direction(d_ray, x, y, data);
-	if (data->dirray[i][0] == 's' || data->dirray[i][0] == 'n')
-		data->dirray[i][1] = (int)(y * 4) % TEXY;
-	else
-		data->dirray[i][1] = (int)(x * 4) % TEXX;
+	data->dirray[i][1] = get_t_width_dir(data, x, y, data->dirray[i][0]);
 	return (ray);
 }

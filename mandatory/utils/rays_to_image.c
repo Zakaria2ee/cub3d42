@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:48:59 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/23 12:46:13 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/25 16:06:36 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,11 @@ static int	get_tex_size(t_data *data, int *dirray)
 	if (dirray[0] == 's')
 		return (data->s.h);
 	else if (dirray[0] == 'w')
-		return (data->we.h);
+		return (data->we.w);
 	else if (dirray[0] == 'n')
 		return (data->n.h);
 	else
-		return (data->e.h);
+		return (data->e.w);
 }
 
 void	put_pixles(t_img img, int current_x, double *rays, t_data *data)
@@ -83,8 +83,8 @@ void	put_pixles(t_img img, int current_x, double *rays, t_data *data)
 	while (i >= 0 && data->current_y > 0)
 	{
 		data->tcolor = get_color(data, data->dirray[current_x],
-				(int)((float)((float)TEXY / (float)to_draw)
-					*(float)i) % TEXY, rays[current_x]);
+				(int)((float)((float)tex_size / (float)to_draw)
+					*(float)i) % tex_size, rays[current_x]);
 		ft_put_pxl(&img, current_x, data->current_y, data->tcolor);
 		i--;
 		data->current_y--;
