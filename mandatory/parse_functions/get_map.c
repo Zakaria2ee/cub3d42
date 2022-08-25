@@ -6,7 +6,7 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 10:50:50 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/24 11:42:18 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/25 08:41:18 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	get_map(t_data *data)
 {
 	char	*s;
 
-	(void)argv;
 	s = get_next_line(data->fd);
 	data->saved = NULL;
 	while (s)
