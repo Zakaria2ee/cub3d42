@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rays_to_image.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:48:59 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/25 16:06:36 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/26 12:15:14 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	put_pixles(t_img img, int current_x, double *rays, t_data *data)
 
 	data->current_y = RSY - 1;
 	tex_size = get_tex_size(data, data->dirray[current_x]);
-	i = (RSY - (RSY * 50 / rays[current_x])) / 2;
+	i = (RSY - (RSX/2/tan(30 * PI/180) * 50 / rays[current_x])) / 2;
 	while (i > 0)
 	{
 		ft_put_pxl(&img, current_x, data->current_y, data->floor);

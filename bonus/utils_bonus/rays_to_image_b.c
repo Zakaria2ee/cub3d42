@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rays_to_image_b.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:48:59 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/25 16:28:54 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/26 12:16:36 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ void	put_pixles_b(t_img img, double *rays, t_data *data)
 
 	v = 0;
 	data->current_y = RSY - 1;
-	i = (RSY - (RSY * 50 / rays[data->current_x])) / 2;
+	i = (RSY - (RSX/2/tan(30 * PI/180) * 50 / rays[data->current_x])) / 2;
 	to_draw = i;
 	tex_size = get_tex_size(data, data->dirray[data->current_x]);
 	draw_floor(data, &v, img, &i);
-	i = (RSY * 50 / rays[data->current_x]);
+	i = (RSX/2/tan(30 * PI/180) * 50 / rays[data->current_x]);
 	to_draw = i;
 	if (i > RSY)
 		i -= (i - RSY) / 2;

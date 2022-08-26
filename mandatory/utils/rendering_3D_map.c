@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rendering_3D_map.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 19:23:52 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/25 15:40:29 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/26 12:16:12 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	walls_checker310(double x, double y, double angle, t_data *data)
 
 int	ini(int *i, double *rays, int current_x)
 {
-	*i = (RSY * 50 / rays[current_x]);
+	*i = (RSX/2/tan(30 * PI/180) * 50 / rays[current_x]);
 	if (*i > RSY)
 		*i -= (*i - RSY) / 2;
 	return (RSY * 50 / rays[current_x]);
