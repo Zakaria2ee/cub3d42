@@ -6,7 +6,7 @@
 /*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 09:49:54 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/21 12:16:25 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/27 12:21:33 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,10 @@ void	init1(t_data *data)
 	data->player_dy = sin(data->player_a * PI / 180) * PX;
 	while (++i < 8)
 		data->keys[i] = 0;
+}
+
+double	distance(int x, int y, int x1, int y1)
+{
+	return (sqrt(((x - x1) * (x - x1))
+			+ ((y - y1) * (y - y1))));
 }

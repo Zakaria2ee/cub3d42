@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rays_to_image.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:48:59 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/26 12:15:14 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/27 14:08:33 by mabenchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	put_pixles(t_img img, int current_x, double *rays, t_data *data)
 
 	data->current_y = RSY - 1;
 	tex_size = get_tex_size(data, data->dirray[current_x]);
-	i = (RSY - (RSX/2/tan(30 * PI/180) * 50 / rays[current_x])) / 2;
+	i = (RSY - (RSX / 2 / tan(30 * PI / 180) * 50 / rays[current_x])) / 2;
 	while (i > 0)
 	{
 		ft_put_pxl(&img, current_x, data->current_y, data->floor);
@@ -83,8 +83,8 @@ void	put_pixles(t_img img, int current_x, double *rays, t_data *data)
 	while (i >= 0 && data->current_y > 0)
 	{
 		data->tcolor = get_color(data, data->dirray[current_x],
-				(int)((float)((float)tex_size / (float)to_draw)
-					*(float)i) % tex_size, rays[current_x]);
+				(int)((float)((float)tex_size / (float)to_draw) *(float)i)
+				% tex_size, rays[current_x]);
 		ft_put_pxl(&img, current_x, data->current_y, data->tcolor);
 		i--;
 		data->current_y--;
