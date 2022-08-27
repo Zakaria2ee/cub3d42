@@ -6,7 +6,7 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 14:28:11 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/16 13:30:22 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/27 20:32:34 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 int	key_hook(int keycode, t_data *data)
 {
 	if (keycode == 53)
+	{
+		mlx_clear_window(data->mlx, data->mlx_win),
 		ft_exit("Exit\n");
+	}
 	else if (keycode == 13)
 		move_stright(data);
 	else if (keycode == 123)

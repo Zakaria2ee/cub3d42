@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 09:49:54 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/27 12:21:33 by mabenchi         ###   ########.fr       */
+/*   Updated: 2022/08/27 20:31:57 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 void	rendering_bonus(t_data *data)
 {
 	data->mlx = mlx_init();
+	if (!data->mlx)
+		ft_exit("The mlx structure didn't inisialized\n");
 	data->mlx_win = mlx_new_window(data->mlx, RSX, RSY, "Cub3d");
 	init(data);
 	rendering_3dbonus_map(data);
 	mini_map(data);
-	mlx_hook(data->mlx_win, 17, 1, ft_close, 0);
+	mlx_hook(data->mlx_win, 17, 1, ft_close, data);
 	mlx_hook(data->mlx_win, 2, 1L << 0, add_key_press, data);
 	mlx_hook(data->mlx_win, 3, 1L << 1, add_key_release, data);
 	mlx_loop_hook(data->mlx, render_map, data);

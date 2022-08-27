@@ -6,7 +6,7 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 13:01:41 by mabenchi          #+#    #+#             */
-/*   Updated: 2022/08/24 11:42:01 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/27 19:52:13 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	get_map(t_data *data);
 char	*get_next_line(int fd);
 void	get_player_a(t_data *data);
 int		parsing_b(char **argv, t_data *data);
-int		ft_close(void);
+int		ft_close(t_data *data);
 int		skip_space(char *s);
 int		delimiters(char c);
 void	check_invalid_textures(char *filename);

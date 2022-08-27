@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bonus_key_hook.c                                   :+:      :+:    :+:   */
+/*   key_hook_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 12:56:38 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/25 09:43:47 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/27 20:31:16 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ int	render_map(t_data *data)
 {
 	usleep(200 * 200);
 	if (data->keys[0] == 1)
+	{
+		mlx_clear_window(data->mlx, data->mlx_win),
 		ft_exit("Exit\n");
+	}
 	if (data->keys[1] == 1)
 		move_stright_b(data);
 	if (data->keys[2] == 1)

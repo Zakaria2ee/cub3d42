@@ -6,7 +6,7 @@
 /*   By: zboudair <zboudair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 11:39:03 by zboudair          #+#    #+#             */
-/*   Updated: 2022/08/24 11:42:38 by zboudair         ###   ########.fr       */
+/*   Updated: 2022/08/27 20:24:40 by zboudair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void	check_error(int i, t_data *data, int *counter, int *j);
 int		res_len(int *str);
 //----------------------------------//
 //-----------utils---------------//
-int		ft_close(void);
+int		ft_close(t_data *data);
 int		skip_space(char *s);
 int		delimiters(char c);
 void	rendering(t_data *data);
