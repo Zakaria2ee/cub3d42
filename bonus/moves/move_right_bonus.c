@@ -1,0 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   move_right.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabenchi <mabenchi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/26 11:58:15 by zboudair          #+#    #+#             */
+/*   Updated: 2022/08/23 12:38:38 by mabenchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../../includes/cub3d_bonus.h"
+
+void	move_right(t_data *data)
+{
+	int	angle;
+	int	x;
+	int	y;
+
+	x = data->player_x;
+	y = data->player_y;
+	angle = data->player_a;
+	angle += 90;
+	if (angle > 360)
+		angle -= 360;
+	else if (angle < 0)
+		angle += 360;
+	if (walls_checker3_b(data->player_x, data->player_y, angle, data))
+		return ;
+	data->player_x += 10 * cos(angle * PI / 180);
+	data->player_y += 10 * sin(angle * PI / 180);
+	rendering_3dbonus_map(data);
+	mini_map(data);
+}
